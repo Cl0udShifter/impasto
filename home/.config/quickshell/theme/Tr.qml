@@ -604,6 +604,11 @@ QtObject {
             "Launcher button": "Botón del lanzador",
             "Open applications": "Aplicaciones abiertas",
             "On every screen": "En todas las pantallas",
+            "Intelligent auto-hide": "Ocultación inteligente",
+            "Hides above grid or fullscreen windows, appears on top hover":
+                "Se oculta ante ventanas en rejilla o pantalla completa, aparece al pasar el cursor arriba",
+            "Always visible": "Siempre visible",
+            "Not available with the bezel": "No disponible con el bisel",
             "Zen": "Zen",
             "One on each, all showing the same": "Uno en cada una, todos iguales",
             "Only on the screen you are on": "Solo en la pantalla en la que estás",
@@ -1717,6 +1722,11 @@ QtObject {
             "Launcher button": "Botão do inicializador",
             "Open applications": "Aplicativos abertos",
             "On every screen": "Em todas as telas",
+            "Intelligent auto-hide": "Ocultação inteligente",
+            "Hides above grid or fullscreen windows, appears on top hover":
+                "Oculta quando há janelas no grid ou em tela cheia, surge ao passar o mouse no topo",
+            "Always visible": "Sempre visível",
+            "Not available with the bezel": "Não disponível com o bezel",
             "Zen": "Zen",
             "One on each, all showing the same": "Uma em cada tela, todas exibindo o mesmo conteúdo",
             "Only on the screen you are on": "Apenas na tela onde o cursor estiver",

@@ -289,7 +289,7 @@ QtObject {
         interval: 30
         onTriggered: {
             root.refresh()
-            if (root.watchClients || root.clients.length > 0)
+            if (root.watchClients || SettingsService.barAutohide || root.clients.length > 0)
                 root.loadClients()
         }
     }
@@ -314,7 +314,13 @@ QtObject {
     }
 
     function clientsOn(workspaceId: int): var {
-        return root.clients.filter(client => client.workspace.id === workspaceId)
+        return root.clients.filter(client => client.workspace && client.workspace.id === workspaceId)
+    }
+
+    // Returns true if there is at least one tiled (grid) or fullscreen window on the workspace.
+    function hasTiledOn(workspaceId: int): bool {
+        return root.clients.some(client => client.workspace && client.workspace.id === workspaceId
+            && client.mapped && !client.hidden && (!client.floating || !!client.fullscreen))
     }
 
     function focusWindow(address: string): void {
@@ -401,7 +407,10 @@ QtObject {
     // One read at start, for the workspace every screen is showing. After it
     // the events keep the map, and the settings window asks again when it
     // wants the full list.
-    Component.onCompleted: root.loadMonitors()
+    Component.onCompleted: {
+        root.loadMonitors()
+        root.loadClients()
+    }
 
     readonly property Process workspacesProcess: Process {
         command: ["hyprctl", "workspaces", "-j"]
@@ -448,6 +457,8 @@ QtObject {
             case "openwindow":
             case "closewindow":
             case "movewindowv2":
+            case "changefloatingmode":
+            case "fullscreen":
                 root.refreshSoon.restart()
                 break
             // `ADDRESS,TITLE`. A spinner in a terminal's title sends one a

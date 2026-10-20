@@ -50,7 +50,8 @@ PanelWindow {
     WlrLayershell.namespace: "impasto-bar"
     // A request for root rises over a full-screen window, which covers the
     // top layer; the bar goes back down once it is answered.
-    WlrLayershell.layer: island.state.openPanel === "auth" && island.expanded
+    WlrLayershell.layer: (island.state.openPanel === "auth" && island.expanded)
+        || (root.autohideActive && !root.away)
         ? WlrLayer.Overlay : WlrLayer.Top
     // What is drawn here takes the island's glass (`Theme.surfaceIn`).
     readonly property bool glassy: true
@@ -227,25 +228,58 @@ PanelWindow {
         ? Math.max(root.bandX + root.bandWidth, root.islandRight) : root.islandRight
     readonly property bool wholeScreen: root.holding && ControlsService.editing
 
+    // Auto-hide: hides the bar above the screen when tiled or fullscreen windows
+    // exist on the current workspace, and reveals it on top hover.
+    readonly property bool autohideOption: SettingsService.barAutohide && !root.edgeToEdge
+    readonly property int currentWorkspaceId: HyprlandService.activeOn(root.screen.name)
+    readonly property bool hasTiledWindow: HyprlandService.hasTiledOn(root.currentWorkspaceId)
+    readonly property bool autohideActive: root.autohideOption && root.hasTiledWindow
+
+    property bool revealed: false
+
+    readonly property Timer hideDelay: Timer {
+        interval: 400
+        onTriggered: root.revealed = false
+    }
+
+    function showBar(): void {
+        root.hideDelay.stop()
+        root.revealed = true
+    }
+
+    function scheduleHide(): void {
+        if (!root.holding && !root.called)
+            root.hideDelay.restart()
+    }
+
+    onHoldingChanged: {
+        if (root.holding)
+            root.showBar()
+        else if (!barHover.hovered && !topEdgeHover.hovered)
+            root.scheduleHide()
+    }
+
     // No input at all while desktop widgets are being arranged: dragging one
     // over the bar would move the pointer to this surface, and the desktop
     // would drop the widget. None either where nothing is painted.
-    readonly property bool inert: DesktopService.editing || !root.painted || root.away
+    readonly property bool inert: DesktopService.editing || !root.painted || (root.away && !root.autohideActive)
 
     // Zen (`barHidden`): the bar waits above the screen and the island comes
-    // down only for what it has to show — a panel, a notification, a
-    // transient — with the sides left up there.
+    // down only for what it has to show.
     readonly property bool zen: SettingsService.barHidden
     readonly property bool called: island.state.layer !== island.state.layerModules
         && island.state.layer !== island.state.layerSummary
-    readonly property bool away: root.zen && !root.called
+    readonly property bool autohidden: root.autohideActive && !root.revealed && !root.holding && !root.called
+    readonly property bool away: (root.zen && !root.called) || root.autohidden
 
     mask: Region {
         width: root.inert ? 0 : root.width
-        // In zen the band is empty, and only the island's shape takes input.
+        // When away in auto-hide, keep a 3px strip at the top edge to detect mouse hover.
         height: root.inert ? 0
             : root.wholeScreen ? root.height
-            : root.zen ? 0 : root.collapsedHeight
+            : root.zen ? 0
+            : root.away ? 3
+            : root.collapsedHeight
 
         Region {
             x: root.shapeLeft
@@ -285,7 +319,29 @@ PanelWindow {
     }
 
     HoverHandler {
-        onHoveredChanged: if (hovered) root.claimed()
+        id: topEdgeHover
+        margin: 0
+        onHoveredChanged: {
+            if (hovered) {
+                root.claimed()
+                root.showBar()
+            } else if (!barHover.hovered) {
+                root.scheduleHide()
+            }
+        }
+    }
+
+    HoverHandler {
+        id: barHover
+        target: face
+        onHoveredChanged: {
+            if (hovered) {
+                root.claimed()
+                root.showBar()
+            } else if (!topEdgeHover.hovered) {
+                root.scheduleHide()
+            }
+        }
     }
 
     // ── OPENING A DETAIL ────────────────────────────────────────────────────

@@ -105,6 +105,20 @@ SettingsSection {
                     onToggled: checked => SettingsService.set("barEverywhere", checked)
                 }
             }
+
+            SettingRow {
+                label: Tr.t("Intelligent auto-hide")
+                reading: SettingsService.barAutohide
+                    ? Tr.t("Hides above grid or fullscreen windows, appears on top hover")
+                    : Tr.t("Always visible")
+                locked: SettingsService.barStyle === "bezel"
+                reason: Tr.t("Not available with the bezel")
+
+                ToggleSwitch {
+                    checked: SettingsService.barAutohide
+                    onToggled: checked => SettingsService.set("barAutohide", checked)
+                }
+            }
         }
 
         SettingGroup {
