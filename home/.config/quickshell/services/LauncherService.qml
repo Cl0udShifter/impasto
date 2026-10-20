@@ -234,7 +234,7 @@ QtObject {
             return root.emoji(term)
         }
 
-        return root.rank(term).slice(0, root.maxResults)
+        return root.rank(term)
     }
 
     // All applications matching `term`, sorted by:
