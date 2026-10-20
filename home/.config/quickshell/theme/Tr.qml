@@ -26,7 +26,8 @@ QtObject {
 
     readonly property var languages: [
         { id: "en", label: "English" },
-        { id: "es", label: "Español" }
+        { id: "es", label: "Español" },
+        { id: "pt", label: "Português (Brasil)" }
     ]
 
     function t(text: string): string {
@@ -1149,6 +1150,1119 @@ QtObject {
             "With more screens": "Con más pantallas",
             "Your account, the lock screen, face unlock and idle behaviour.":
                 "Tu cuenta, la pantalla de bloqueo, el desbloqueo facial y la inactividad."
+        },
+        pt: {
+            // ── SHARED ──────────────────────────────────────────────────────
+            "Search settings": "Buscar configurações",
+            "Reset": "Restaurar",
+            "Open": "Abrir",
+            "Clear": "Limpar",
+            "Edit": "Editar",
+            "Done": "Concluído",
+            "Cancel": "Cancelar",
+            "Apply": "Aplicar",
+            "Remove": "Remover",
+            "Size": "Tamanho",
+            "Scale": "Escala",
+            "Shape": "Formato",
+            "Shown": "Visível",
+            "Hidden": "Oculto",
+            "None": "Nenhum",
+            "Off": "Desativado",
+            "On": "Ativado",
+            "Default": "Padrão",
+            "default": "padrão",
+            "Custom": "Personalizado",
+            "Left": "Esquerda",
+            "Right": "Direita",
+            "Bottom": "Inferior",
+            "Start": "Iniciar",
+            "Middle": "Meio",
+            "End": "Fim",
+            "Applications": "Aplicativos",
+            "Search applications": "Buscar aplicativos",
+            "Windows": "Janelas",
+            "Window": "Janela",
+            "Screen": "Tela",
+            "Region": "Região",
+            "Workspaces": "Espaços de trabalho",
+            "Tray": "Bandeja",
+            "Privacy": "Privacidade",
+            "Sound": "Som",
+            "%1 screens": "%1 telas",
+            "Screens": "Telas",
+            "Warmth": "Temperatura da cor",
+            "Presets": "Predefinições",
+            "Candle": "Vela",
+            "Warm": "Quente",
+            "Soft": "Suave",
+            "Neutral": "Neutra",
+            "Recording": "Gravando",
+            "What uses the microphone, camera or screen": "O que está usando o microfone, a câmera ou a tela",
+            "Not shown": "Não exibido",
+            "now": "agora",
+            "Theme": "Tema",
+            "Face": "Visual",
+            "Style": "Estilo",
+            "Palette": "Paleta",
+            "Settings": "Configurações",
+            "Wallpaper": "Papel de parede",
+            "Blur": "Desfoque",
+            "Background": "Fundo",
+            "Arrangement": "Disposição",
+
+            // ── THE PANEL ───────────────────────────────────────────────────
+            "THE SHELL": "O SHELL",
+            "THE DESK": "A ÁREA DE TRABALHO",
+            "THE SESSION": "A SESSÃO",
+
+            "Modules": "Módulos",
+            "Desktop": "Área de Trabalho",
+            "What sits on the wallpaper, under the windows.":
+                "O que fica sobre o papel de parede, sob as janelas.",
+            "Control Centre": "Central de Controle",
+            "What the island opens onto when you click it.":
+                "O que a ilha abre quando você clica nela.",
+            "Dock": "Dock",
+            "The dock and the applications kept on it.":
+                "A dock e os aplicativos fixados nela.",
+            "Launcher": "Inicializador",
+            "Search, sigils and the clipboard history.":
+                "Busca, comandos e histórico da área de transferência.",
+            "Results": "Resultados",
+            "Sigils": "Comandos",
+            "Clipboard": "Área de transferência",
+            "Appearance": "Aparência",
+            "Type": "Tipografia",
+            "Motion": "Animações",
+            "Displays": "Monitores",
+            "Screen layout, modes and the laptop lid.":
+                "Disposição e modos das telas, e a tampa do notebook.",
+            "The screen": "A tela",
+            "The lid": "A tampa",
+            "Input": "Entrada",
+            "The keyboard, the pointer and the cursor.":
+                "O teclado, o ponteiro e o cursor.",
+            "Keyboard": "Teclado",
+            "Pointer": "Ponteiro",
+            "Keys": "Atalhos",
+            "Every keybinding, the shell's and Hyprland's.":
+                "Todos os atalhos de teclado, do shell e do Hyprland.",
+            "Session": "Sessão",
+            "Lock screen": "Tela de bloqueio",
+            "Lock": "Bloquear",
+            "Suspend": "Suspender",
+            "Log out": "Encerrar sessão",
+            "Restart": "Reiniciar",
+            "Shut down": "Desligar",
+            "When you leave": "Ao se ausentar",
+            "System": "Sistema",
+            "Profiles": "Perfis",
+
+            // ── BAR & ISLAND ────────────────────────────────────────────────
+            "The island": "A ilha",
+            "Island": "Ilha",
+            "Grouped": "Agrupada",
+            "Spread": "Espalhada",
+            "The workspaces, the island and the modules together in the middle.":
+                "Os espaços, a ilha e os módulos juntos no centro.",
+            "The workspaces at one edge, the modules at the other, the island between them.":
+                "Os espaços em uma borda, os módulos na outra e a ilha entre eles.",
+            "Everything inside a single capsule.": "Tudo dentro de uma única cápsula.",
+            "A band across the whole top edge, with the island dropping out of its middle.":
+                "Uma faixa ao longo de toda a borda superior, com a ilha descendo do centro.",
+            "Bezel": "Moldura",
+            "The bezel is always cut into the top edge": "A moldura é sempre encaixada na borda superior",
+            "A glance on hover": "Uma visão rápida ao passar o mouse",
+            "Resting the pointer on the island opens it": "Repousar o ponteiro sobre a ilha a expande",
+            "Only a click opens anything": "Apenas um clique abre algo",
+            "Lyrics": "Letras",
+            "The playing track's lyrics are looked up on lrclib.net": "A letra da música em reprodução é buscada no lrclib.net",
+            "No lyrics, and nothing is looked up": "Sem letras, e nenhuma busca é feita",
+            "Instrumental": "Instrumental",
+            "Lyrics are off": "Letras desativadas",
+            "Nothing playing": "Nada em reprodução",
+            "Looking for lyrics": "Buscando letras",
+            "No lyrics for this one": "Sem letra para esta música",
+            "Lyrics, untimed": "Letra sem sincronização",
+            "A region": "Uma região",
+            "A window": "Uma janela",
+            "Flip": "Virar",
+            "Music": "Música",
+            "Only while something is playing.": "Apenas enquanto algo estiver tocando.",
+            "Show": "Exibir",
+            "Nothing": "Nada",
+            "The player": "O reprodutor",
+            "With lyrics": "Com letra",
+            "Behind it": "Atrás",
+            "The cover": "A capa",
+            "Muted": "Silenciado",
+            "Cut into the top edge": "Recortado na borda superior",
+            "Floating below the top edge": "Flutuando sob a borda superior",
+            "Floating": "Flutuante",
+            "One island": "Uma ilha",
+            "Edge to edge": "De ponta a ponta",
+            "The bar itself is the preview: it repaints over this window as the sliders move.":
+                "A própria barra é a prévia: ela se redesenha sobre esta janela conforme você move os controles.",
+            "Everything on the bar scales with its height. The top margin is the gap to the screen edge (the island ignores it in notch mode), and the side margin is the inset from the left and right edges.":
+                "Tudo na barra escala com a sua altura. A margem superior é o espaço até a borda da tela (a ilha a ignora no modo notch), e a margem lateral é o recuo das bordas esquerda e direita.",
+            "Bar height": "Altura da barra",
+            "Top margin": "Margem superior",
+            "Side margin": "Margem lateral",
+            "The shown workspaces are always drawn; the rest, up to the available count, appear only while they have windows.":
+                "Os espaços visíveis são sempre desenhados; os restantes, até o limite disponível, aparecem apenas enquanto contiverem janelas.",
+            "Workspaces shown": "Espaços exibidos",
+            "Workspaces available": "Espaços disponíveis",
+
+            "Notifications": "Notificações",
+            "New notifications appear briefly in the island.":
+                "Novas notificações surgem brevemente na ilha.",
+            "The shell is the notification daemon: notifications without their own timeout use the time below, and critical ones stay until dismissed. Do not disturb only keeps them off the screen; they still collect in the control centre until the shell restarts.":
+                "O shell é o daemon de notificações: notificações sem tempo limite próprio usam o tempo abaixo, e notificações críticas permanecem até serem dispensadas. O Não perturbe apenas as impede de aparecer na tela; elas continuam acumuladas na central de controle até o shell reiniciar.",
+            "How long one stays": "Duração de exibição",
+            "Nothing is shown while Do not disturb is on":
+                "Nada é exibido enquanto o Não perturbe estiver ativado",
+            "Do not disturb": "Não perturbe",
+            "Nothing takes the screen": "Nada ocupa a tela inteira",
+            "Everything is shown": "Tudo é exibido",
+            "Kept": "Salvos",
+            "in this session": "nesta sessão",
+            "Nothing kept": "Nada salvo",
+
+            // ── BAR & ISLAND · THE TIME ─────────────────────────────────────
+            "The time": "A hora",
+            "Beside the time": "Ao lado da hora",
+            "Shown on the resting island, and larger in the glance.":
+                "Exibido na ilha em repouso, e maior na visão rápida.",
+            "What is running sits either side of the time, two at most.":
+                "O que está em execução fica nos lados da hora, no máximo dois.",
+            "A recording is always there and comes first; click its dot to stop it. Then the microphone, camera or screen in use, a countdown and media, which still work from their chips on the bar when kept off the island. The workspace comes last, for a bar without the strip; click it for the overview.":
+                "Uma gravação sempre fica visível e tem prioridade; clique no ponto para interromper. Em seguida, microfone, câmera ou tela em uso, contagem regressiva e mídia, que continuam funcionando nos chips da barra mesmo fora da ilha. O espaço de trabalho vem por último, para uma barra sem a faixa de espaços; clique nele para a visão geral.",
+            "Workspace": "Espaço de trabalho",
+            "The one you are on": "O espaço ativo no momento",
+            "On the island while it runs": "Na ilha enquanto estiver em execução",
+            "Only where its chip is put": "Apenas onde o seu elemento for colocado",
+
+            // ── BAR & ISLAND · MODULES ──────────────────────────────────────
+            "Chips": "Elementos",
+            "Every piece on the bar follows these unless it was given its own.":
+                "Todos os elementos da barra seguem isso, a menos que tenham ajuste próprio.",
+            "Like the bar": "Como a barra",
+            "When": "Quando",
+            "The bar": "A barra",
+            "While it runs": "Enquanto estiver em execução",
+            "Nothing to set: it is drawn one way.": "Nada a configurar: é desenhado de uma única forma.",
+            "Rings": "Anéis",
+            "Numbers": "Números",
+            "Roman": "Romanos",
+            "Kanji": "Kanji",
+            "Greek": "Grego",
+            "Icon shows the module's symbol; Ring draws the gauge of a module that measures something (charge, volume, a countdown) as a circle around it, and the rest keep their symbol. The figure is the value itself, and On hover shows it only while the pointer is over the chip.":
+                "Ícone mostra o símbolo do módulo; Anel desenha o medidor de módulos que medem algo (bateria, volume, contagem regressiva) como um círculo ao redor, e os demais mantêm seu símbolo. O valor é o número em si, e Ao passar o mouse só exibe enquanto o cursor estiver sobre o elemento.",
+            "Icon": "Ícone",
+            "Ring": "Anel",
+            "The symbol alone, small.": "Apenas o símbolo, pequeno.",
+            "The gauge, in a circle.": "O medidor, em um círculo.",
+            "Figure": "Valor",
+            "No": "Não",
+            "On hover": "Ao passar o mouse",
+            "Always": "Sempre",
+            "No figure beside it": "Sem valor ao lado",
+            "The figure opens under the pointer": "O valor surge sob o cursor",
+            "The figure always beside it": "O valor sempre visível ao lado",
+            "Layout": "Disposição",
+            "Drag a piece from the catalogue onto the bar.":
+                "Arraste um elemento do catálogo para a barra.",
+            "Drop a piece on either half of the bar to place it on that side of the island; drag it along to move it or off the bar to remove it, and click it to give it its own shape and figure. Adjacent modules share a capsule, and a split starts a new one.":
+                "Solte um elemento em uma metade da barra para colocá-lo naquele lado da ilha; arraste para reposicionar ou para fora da barra para remover, e clique para definir formato e valor próprios. Módulos adjacentes compartilham a cápsula, e um separador inicia outra.",
+            "Empty": "Vazio",
+            "Search": "Buscar",
+            "Overview": "Visão Geral",
+            "Split": "Separador",
+
+            "Media": "Mídia",
+            "Timer": "Temporizador",
+            "Battery": "Bateria",
+            "Volume": "Volume",
+            "Brightness": "Brilho",
+            "Network": "Rede",
+            "Weather": "Clima",
+            "Markets": "Mercados",
+            "Updates": "Atualizações",
+            "Pet": "Mascote",
+            "Spectrum": "Espectro",
+            "Under the windows": "Sob as janelas",
+            "Fill": "Preenchimento",
+            "From the edge": "A partir da borda",
+            "To the tip": "Até a ponta",
+            "Height": "Altura",
+            "Bars": "Barras",
+            "Gap": "Espaço",
+            "Lows": "Graves",
+            "At the corners": "Nos cantos",
+            "Peaks": "Picos",
+            "Rounded columns": "Colunas arredondadas",
+            "Square columns": "Colunas retas",
+            "Segments": "Segmentos",
+            "Dots": "Pontos",
+            "Fading to the tip": "Desvanecendo até a ponta",
+            "Solid": "Sólido",
+            "Two colours": "Duas cores",
+            "Games": "Jogos",
+            "Calendar": "Calendário",
+            "Notes": "Notas",
+            "Tasks": "Tarefas",
+            "Clock": "Relógio",
+            "Photo": "Foto",
+
+            // ── BAR & ISLAND · WHAT A MODULE KNOWS ──────────────────────────
+            "Seconds make the clock repaint sixty times as often.":
+                "Os segundos fazem o relógio repintar sessenta vezes mais frequentemente.",
+            "Clock format": "Formato do relógio",
+            "24-hour": "24 horas",
+            "12-hour": "12 horas",
+            "Show the date": "Exibir a data",
+            "The time alone": "Apenas a hora",
+            "Show seconds": "Exibir segundos",
+
+            "Left empty, wttr.in guesses from your connection's IP address, which can be far off. A city, postcode or airport code is more reliable, and the bar uses the same place.":
+                "Se deixado em branco, o wttr.in tenta adivinhar pelo IP da sua conexão, o que pode errar bastante. Uma cidade, CEP ou código de aeroporto é mais confiável, e a barra usa o mesmo local.",
+            "Location": "Localização",
+            "A city, a postcode or an airport code.":
+                "Uma cidade, CEP ou código de aeroporto.",
+            "Wherever the request comes from": "De onde vier a requisição",
+            "No such place — the last reading is still showing":
+                "Local não encontrado, exibindo a última leitura",
+
+            "The graph is read from the public profile page, so no token or account is needed. It stays empty until you enter a username.":
+                "O gráfico é lido da página pública do perfil, dispensando token ou conta. Permanece vazio até que você insira um nome de usuário.",
+            "Username": "Nome de usuário",
+            "Whose public contribution graph to draw.":
+                "De quem exibir o gráfico público de contribuições.",
+            "Nobody yet": "Ninguém ainda",
+            "No such profile — the last grid is still showing":
+                "Perfil não encontrado, exibindo a última grade",
+
+            "The coins and currencies to follow, separated by commas.":
+                "Moedas e moedas fiduciárias a acompanhar, separadas por vírgula.",
+            "A coin alone is priced in US dollars and BTC/EUR in euros; two currencies, such as EUR/USD, follow the European Central Bank's daily rate. Prices come from CoinGecko and Frankfurter, which see what you follow but need no account. The bar shows the first one.":
+                "Uma criptomoeda avulsa é cotada em dólares americanos e BTC/EUR em euros; duas moedas, como EUR/USD, seguem a cotação diária do Banco Central Europeu. Os preços vêm da CoinGecko e Frankfurter, sem necessidade de conta. A barra exibe a primeira.",
+            "Follow": "Acompanhar",
+            "Not found:": "Não encontrado:",
+
+            "A note on the wallpaper is written the same way as one in the panel.":
+                "Uma nota no papel de parede é escrita da mesma forma que uma no painel.",
+            "Handwriting": "Manuscrito",
+            "The signature's script": "A letra da assinatura",
+            "The interface face": "A fonte da interface",
+            "Gone while a window is open": "Oculto enquanto houver janela aberta",
+            "Over the windows": "Sobre as janelas",
+
+            "How the creature is drawn, wherever it is drawn.":
+                "Como a criatura é desenhada, onde quer que apareça.",
+            "The species decides the colour and what the creature is; the style decides how it is drawn. The same drawing is used on the bar, in the pet's panel and on the desktop.":
+                "A espécie define a cor e qual é a criatura; o estilo define como é desenhada. O mesmo desenho é usado na barra, no painel do mascote e na área de trabalho.",
+            "Creature": "Criatura",
+            "A different animal for each species.":
+                "Um animal diferente para cada espécie.",
+            "Plush": "Pelúcia",
+            "One round body, shaded.": "Corpo arredondado, com sombreamento.",
+            "Paper": "Papel",
+            "Flat, cut from two tones.": "Plano, recortado em dois tons.",
+            "Pixel": "Pixel",
+            "A sprite, sixteen cells across.":
+                "Um sprite com dezesseis células de largura.",
+
+            "Unhatched — care for it and see": "No ovo, cuide dele para ver",
+            "Bring out": "Colocar para fora",
+            "Out": "Fora",
+            "The next egg": "O próximo ovo",
+            "Levels across the family": "Níveis em toda a família",
+            "All five found": "Todos os cinco encontrados",
+            "Nothing left to find — there is a star waiting at level fifteen for each of them.":
+                "Nada restante para encontrar, há uma estrela aguardando no nível quinze para cada um deles.",
+
+            // ── DESKTOP ─────────────────────────────────────────────────────
+            "The desktop": "A área de trabalho",
+            "Widgets are arranged directly on the wallpaper.":
+                "Widgets são posicionados diretamente sobre o papel de parede.",
+            "Arranging brings the widgets in front of the windows, with a card of every module, moved by the space between them. Drag one onto the grid, pull a widget's corner to change its shape, click it for a look of its own, and drop it back on the card to take it off. Escape or the right button ends it, and the right button on any widget opens the same mode from the picture. This window closes meanwhile.":
+                "O modo de organização traz os widgets à frente das janelas, com um cartão de todos os módulos. Arraste um para a grade, puxe a quina de um widget para redimensionar, clique para definir um visual próprio e solte-o no cartão para removê-lo. Esc ou botão direito finaliza, e o botão direito em qualquer widget abre esse mesmo modo. Esta janela se fechará durante a edição.",
+            "Arrange the desktop": "Organizar área de trabalho",
+            "Arrange widgets": "Organizar widgets",
+            "on the wallpaper": "no papel de parede",
+            "Nothing on the wallpaper yet": "Nada no papel de parede ainda",
+            "Hide the widgets": "Ocultar os widgets",
+            "Window layout": "Disposição de janelas",
+            "Look": "Visual",
+            "Every widget follows these unless it was given a look of its own.":
+                "Todos os widgets seguem isto, a menos que tenham visual próprio.",
+
+            "Modern": "Moderno",
+            "Analogue": "Analógico",
+            "Sticker": "Adesivo",
+            "Small": "Pequeno",
+            "Wide": "Largo",
+            "Large": "Grande",
+            "Band": "Faixa",
+
+            "Notes on the edge": "Notas na borda",
+            "Where": "Onde",
+            "Grid": "Grade",
+            "Along the edge": "Ao longo da borda",
+            "Which notes": "Quais notas",
+            "New notes land here": "Novas notas aparecem aqui",
+            "Which note": "Qual nota",
+            "Drop here to take it off": "Solte aqui para remover",
+            "Drop here to leave it out": "Solte aqui para não incluir",
+            "The newest": "A mais recente",
+            "New note": "Nova nota",
+            "Choose…": "Escolher…",
+            "Caption": "Legenda",
+            "Written under the picture": "Escrito abaixo da foto",
+            "Wallpapers": "Papéis de parede",
+            "Home": "Pasta pessoal",
+            "No pictures here": "Nenhuma imagem aqui",
+
+            // ── CONTROL CENTRE ──────────────────────────────────────────────
+            "The panel": "O painel",
+            "Edit shows the grid, its columns and rows under the island, and a card of every block under them. Drag a block onto the cells, pull a corner or scroll to resize it, and drop it on the card to remove it; a click on a toggles or shortcuts block chooses what it carries. Columns come and go on both sides alike, so the blocks stay centred. Escape leaves, and the right button on the panel enters or leaves without opening settings.":
+                "Editar exibe a grade, suas colunas e linhas sob a ilha, e um cartão com todos os blocos. Arraste um bloco para as células, puxe uma quina ou role para redimensionar, e solte no cartão para remover; clicar em um bloco de alternadores ou atalhos define seus itens. As colunas são ajustadas igualmente em ambos os lados para manter o centro. Esc sai, e o botão direito no painel alterna o modo sem abrir as configurações.",
+            "A grid of the size chosen here, arranged on the panel itself.":
+                "Uma grade do tamanho escolhido aqui, organizada no próprio painel.",
+            "columns × rows": "colunas × linhas",
+            "At a glance": "Em um relance",
+            "Personal": "Pessoal",
+            "Controls": "Controles",
+            "Click the cell that should be the grid's corner": "Clique na célula que deve ser a quina da grade",
+            "Ground": "Fundo",
+            "Sides": "Laterais",
+            "The icons on the wallpaper": "Os ícones no papel de parede",
+            "Each group in a capsule": "Cada grupo em uma cápsula",
+            "In one island the sides sit on its band": "Em uma ilha as laterais ficam na faixa",
+            "In capsules": "Em cápsulas",
+            "On the wallpaper": "No papel de parede",
+            "Refraction": "Refração",
+            "Solid black": "Preto sólido",
+            "The terminal's glass, over a blur": "O vidro do terminal, sobre um desfoque",
+            "Classic": "Clássico",
+            "Arrange the control centre": "Organizar a central de controle",
+            "The top row": "A linha superior",
+            "The top row: click to choose its buttons": "A linha superior: clique para escolher seus botões",
+            "Small buttons over the grid, on either side. With none, there is no row.":
+                "Pequenos botões sobre a grade, em ambos os lados. Sem nenhum, a linha não é exibida.",
+            "Drag a button onto either side; drag it back here to take it off.":
+                "Arraste um botão para qualquer um dos lados; arraste de volta aqui para remover.",
+            "Every button is on the row": "Todos os botões estão na linha",
+            "Default layout": "Disposição padrão",
+            "Shortcuts": "Atalhos",
+
+            "System statistics": "Estatísticas do sistema",
+            "Workspace overview": "Visão geral dos espaços",
+            "Session menu": "Menu da sessão",
+            "Lock the screen": "Bloquear a tela",
+            "Task board": "Quadro de tarefas",
+            "Packages": "Pacotes",
+
+            "Toggles": "Alternadores",
+            "Wi-Fi": "Wi-Fi",
+            "Power": "Energia",
+            "Focus": "Foco",
+            "Microphone": "Microfone",
+            "Camera": "Câmera",
+            "Authentication required": "Autenticação necessária",
+            "That password didn't work": "A senha informada está incorreta",
+            "Password": "Senha",
+            "Authorize": "Autorizar",
+            "Caps Lock is on": "Caps Lock ativado",
+            "Machines": "Máquinas virtuais",
+            "None running": "Nenhuma em execução",
+            "running": "em execução",
+            "cores": "núcleos",
+            "core": "núcleo",
+            "Find a system…": "Localizar um sistema…",
+            "New": "Nova",
+            "Machines need quickemu, which ./setup packages installs.": "Máquinas virtuais requerem o quickemu, instalado via ./setup packages.",
+            "No machines yet. Pick a system in New.": "Nenhuma máquina virtual ainda. Escolha um sistema em Nova.",
+            "Downloading": "Baixando",
+            "snapshots": "snapshots",
+            "snapshot": "snapshot",
+            "Paused": "Pausada",
+            "Shutting down": "Desligando",
+            "Running": "Em execução",
+            "Cores": "Núcleos",
+            "Memory": "Memória RAM",
+            "Take a snapshot": "Criar um snapshot",
+            "Restore %1?": "Restaurar %1?",
+            "Delete it and its disk": "Excluir máquina e seu disco",
+            "Reading the catalogue…": "Lendo catálogo…",
+            "Version": "Versão",
+            "Edition": "Edição",
+            "Disk": "Disco",
+            "disk": "disco",
+            "Download and create": "Baixar e criar",
+            "Systems from quickget": "Sistemas via quickget",
+            "Close a machine's window and it keeps running": "Fechar a janela da máquina não interrompe sua execução",
+            "Virtual machines": "Máquinas virtuais",
+            "Development servers": "Servidores de desenvolvimento",
+            "Screen time": "Tempo de tela",
+            "on average": "em média",
+            "Counting from now": "Contando a partir de agora",
+            "Nothing yet today": "Nada registrado hoje ainda",
+            "Today": "Hoje",
+            "Yesterday": "Ontem",
+            "This week": "Esta semana",
+            "Daily average": "Média diária",
+            "Day": "Dia",
+            "Week": "Semana",
+            "Month": "Mês",
+            "About your daily average": "Próximo à sua média diária",
+            "more than your daily average": "mais que a sua média diária",
+            "less than your daily average": "menos que a sua média diária",
+            "than last week": "em relação à semana passada",
+            "than last month": "em relação ao mês passado",
+            "less": "a menos",
+            "in total": "no total",
+            "Screen time counts from now on, while the session is in use. Come back in a while.": "O tempo de tela começa a contar a partir de agora, enquanto a sessão estiver ativa. Volte mais tarde para ver os dados.",
+            "Most used": "Mais usados",
+            "Groups": "Grupos",
+            "First use": "Primeiro uso",
+            "Total": "Total",
+            "Unlocks": "Desbloqueios",
+            "from": "de",
+            "Longest session": "Sessão mais longa",
+            "avg": "média",
+            "Sessions": "Sessões",
+            "Development": "Desenvolvimento",
+            "Social": "Social",
+            "Internet": "Internet",
+            "Entertainment": "Entretenimento",
+            "Creativity": "Criatividade",
+            "Productivity": "Produtividade",
+            "Servers": "Servidores",
+            "None listening": "Nenhum escutando",
+            "listening": "escutando",
+            "open to the network": "aberto para a rede",
+            "this machine": "esta máquina",
+            "the network too": "a rede também",
+            "Stopping": "Parando",
+            "Start a server inside a project and its port appears here.": "Inicie um servidor dentro de um projeto e a porta aparecerá aqui.",
+            "Camera effects": "Efeitos de câmera",
+            "Effects and reactions for your calls": "Efeitos e reações para suas chamadas de vídeo",
+            "Off · no program can use it": "Desativado · nenhum programa pode utilizar",
+            "In use by": "Em uso por",
+            "Pick": "Escolher",
+            "in any call": "em qualquer chamada",
+            "Virtual camera": "Câmera virtual",
+            "No camera is plugged in.": "Nenhuma câmera conectada.",
+            "Run ./setup camera once to set the virtual camera up.": "Execute ./setup camera uma vez para configurar a câmera virtual.",
+            "The virtual camera is off.": "A câmera virtual está desativada.",
+            "The camera could not be opened. Another program may be holding it.": "Não foi possível abrir a câmera. Outro aplicativo pode estar utilizando-a.",
+            "Waking the camera": "Inicializando câmera",
+            "LIVE": "AO VIVO",
+            "Preview": "Prévia",
+            "face": "rosto",
+            "faces": "rostos",
+            "Reactions": "Reações",
+            "Thumbs up": "Polegar para cima",
+            "Heart": "Coração",
+            "Peace": "Paz e amor",
+            "Thumbs down": "Polegar para baixo",
+            "Horns": "Rock",
+            "OK": "OK",
+            "Middle finger": "Dedo médio",
+            "Natural": "Natural",
+            "Mono": "Monocromático",
+            "Blur back": "Desfocar fundo",
+            "Centre Stage": "Palco Central",
+            "Shades": "Óculos de sol",
+            "Crown": "Coroa",
+            "Sparkle": "Brilho",
+            "Photo saved and copied": "Foto salva e copiada",
+            "Photo saved": "Foto salva",
+            "No photo was taken": "Nenhuma foto foi tirada",
+            "On the island while one runs": "Na ilha enquanto uma estiver em execução",
+            "Airplane": "Avião",
+            "Output": "Saída",
+            "Notch": "Notch",
+            "Shadows": "Sombras",
+            "Game mode": "Modo de jogo",
+            "Game mode on": "Modo de jogo ativado",
+            "Game mode off": "Modo de jogo desativado",
+            "Everything still, for a game or a slow machine.": "Desativa animações e efeitos pesados, ideal para jogos ou economia de recursos.",
+            "Stops the shell's animations, the spectrum and the pet, makes the island, the dock and the widgets solid without shadows, and turns off Hyprland's animations, blur, shadow and glass. The settings below are kept and come back when it is turned off.":
+                "Pausa as animações do shell, o espectro e o mascote, torna a ilha, a dock e os widgets sólidos sem sombras, e desativa animações, desfoque, sombra e vidro do Hyprland. As configurações são preservadas e retornam quando desativado.",
+            "Capture": "Captura",
+            "Annotate": "Anotar",
+            "Read text": "Ler texto (OCR)",
+            "Colour": "Cor",
+            "Record": "Gravar",
+            "Clear clipboard": "Limpar área de transferência",
+
+            // ── DOCK ────────────────────────────────────────────────────────
+            "The dock": "A dock",
+            "The dock is off": "A dock está desativada",
+            "Your kept and open applications, on one edge of the screen.":
+                "Seus aplicativos fixados e abertos, em uma borda da tela.",
+            "An empty dock is not drawn. Icons are reordered by dragging them on the dock itself, and the top edge is left to the bar.":
+                "Uma dock vazia não é desenhada. Os ícones são reordenados arrastando-os na própria dock, e a borda superior é reservada para a barra.",
+            "Show the dock": "Exibir a dock",
+            "Edge": "Borda",
+            "Alignment": "Alinhamento",
+            "Icon size": "Tamanho dos ícones",
+            "Magnify on hover": "Ampliar ao passar o mouse",
+            "Behaviour": "Comportamento",
+            "The launcher button opens the island's launcher, and open applications appear after a divider while they run. Windows and widgets pass under the dock, so moving or hiding it moves nothing else.":
+                "O botão do inicializador abre o launcher da ilha, e aplicativos em execução aparecem após um divisor. Janelas e widgets passam sob a dock, sem interferir no layout ao mover ou ocultar.",
+            "Launcher button": "Botão do inicializador",
+            "Open applications": "Aplicativos abertos",
+            "On every screen": "Em todas as telas",
+            "Zen": "Zen",
+            "One on each, all showing the same": "Uma em cada tela, todas exibindo o mesmo conteúdo",
+            "Only on the screen you are on": "Apenas na tela onde o cursor estiver",
+            "One on each, and the one you are on is the live one":
+                "Uma em cada tela, e a da tela ativa é a funcional",
+            "Hide until pointed at": "Ocultar até apontar o mouse",
+            "Kept on it": "Fixados nela",
+            "These stay whether they are running or not, and they lead the launcher's list too.":
+                "Permanecem fixos estejam em execução ou não, e também aparecem no topo do inicializador.",
+            "Nothing kept yet.": "Nenhum aplicativo fixado ainda.",
+            "This application is no longer installed":
+                "Este aplicativo não está mais instalado",
+            "Add an application": "Adicionar um aplicativo",
+            "New window": "Nova janela",
+            "Keep in the dock": "Fixar na dock",
+            "Remove from the dock": "Desafixar da dock",
+            "Close": "Fechar",
+            "Close all windows": "Fechar todas as janelas",
+
+            // ── LAUNCHER ────────────────────────────────────────────────────
+            "The list": "A lista",
+            "What the launcher lists with nothing typed, and how tall it gets.":
+                "O que o inicializador lista quando nada for digitado, e a sua altura.",
+            "By use ranks applications by launches, with older launches counting for less; those kept on the dock come first until something else is used more. As tall as the answer sizes the island to the results, up to the limit above; off, the box is fixed and the list scrolls.":
+                "Por uso ordena os aplicativos por frequência de abertura, dando menos peso aos acessos mais antigos; os fixados na dock aparecem primeiro até que outro seja mais usado. Ajustar à resposta adapta a ilha aos resultados até o limite acima; desligado, o tamanho é fixo e a lista rola.",
+            "Order": "Ordenação",
+            "By use": "Por uso",
+            "Alphabetical": "Alfabética",
+            "Results shown": "Resultados exibidos",
+            "rows": "linhas",
+            "As tall as the answer": "Ajustar à resposta",
+            "Only as tall as it needs": "Apenas a altura necessária",
+            "A fixed box": "Uma caixa fixa",
+            "Plain text searches applications, and a sigil in front switches mode. Click one to change it.":
+                "Texto comum busca aplicativos, e um caractere prefixo troca de modo. Clique em um para alterar.",
+
+            "Calculate": "Calcular",
+            "Work something out": "Fazer cálculos",
+            "Desk": "Área de Trabalho",
+            "Open a panel or an action": "Abrir um painel ou ação",
+            "Find an open window": "Encontrar uma janela aberta",
+            "Start a countdown": "Iniciar contagem regressiva",
+            "Note": "Nota",
+            "Keep a note": "Salvar uma nota",
+            "Copy something again": "Copiar algo novamente",
+            "Emoji": "Emoji",
+            "Copy an emoji": "Copiar um emoji",
+            "Recent": "Recentes",
+            "Smileys & Emotion": "Carinhas e Emoções",
+            "People & Body": "Pessoas e Corpo",
+            "Animals & Nature": "Animais e Natureza",
+            "Food & Drink": "Comida e Bebida",
+            "Travel & Places": "Viagens e Lugares",
+            "Activities": "Atividades",
+            "Objects": "Objetos",
+            "Symbols": "Símbolos",
+            "Flags": "Bandeiras",
+            "No animated wallpapers yet. Videos in ~/.local/share/wallpapers/animated show up here.":
+                "Nenhum papel de parede animado ainda. Vídeos colocados em ~/.local/share/wallpapers/animated aparecerão aqui.",
+            "Apps": "Aplicativos",
+
+            "Clipboard history": "Histórico da área de transferência",
+            "Everything copied, searchable from the launcher.":
+                "Tudo o que foi copiado, pesquisável no inicializador.",
+            "Copies from password managers are never stored, and turning the history off stops the watcher entirely. Emptying on lock is off by default, since the lock already protects the session.":
+                "Cópias feitas a partir de gerenciadores de senhas nunca são salvas, e desativar o histórico para o monitoramento por completo. Limpar ao bloquear fica desligado por padrão, pois o bloqueio já protege a sessão.",
+            "Keep a history": "Manter histórico",
+            "Watching": "Monitorando",
+            "Entries kept": "Entradas mantidas",
+            "No history is being kept": "Nenhum histórico está sendo mantido",
+            "Keep images": "Manter imagens",
+            "Pictures as well as text": "Imagens e texto",
+            "Text only": "Apenas texto",
+            "Empty it on lock": "Limpar ao bloquear",
+            "Thrown away on lock": "Descartado ao bloquear",
+            "Kept across a lock": "Mantido após bloquear",
+
+            // ── APPEARANCE ──────────────────────────────────────────────────
+            "The palette follows the wallpaper, and both are chosen in the island.":
+                "A paleta de cores acompanha o papel de parede, e ambos são escolhidos na ilha.",
+            "This opens the island's appearance panel, where wallpapers and palettes are chosen together.":
+                "Abre o painel de aparência da ilha, onde papéis de parede e paletas são escolhidos juntos.",
+            "Theme and wallpaper": "Tema e papel de parede",
+
+            "Transition": "Transição",
+            "How the next wallpaper arrives over the last one.":
+                "Como o próximo papel de parede surge sobre o anterior.",
+            "Random picks one of the effects above each time a wallpaper is applied.":
+                "Aleatório escolhe um dos efeitos acima sempre que um novo papel de parede é aplicado.",
+            "Effect": "Efeito",
+            "Fade": "Esmaecer",
+            "Wipe": "Varrer",
+            "Wave": "Onda",
+            "Circle": "Círculo",
+            "Outer": "De fora para dentro",
+            "Random": "Aleatório",
+
+            "Greeting": "Saudação",
+            "The animation shown beside fastfetch when you run fa.":
+                "A animação exibida ao lado do fastfetch ao executar fa.",
+            "Four pixel-art scenes, redrawn in the current palette whenever it changes. Random picks a new one on every run, and fa with a scene name (fa koi) plays that one.":
+                "Quatro cenas em pixel art, redesenhadas na paleta atual sempre que ela muda. Aleatório escolhe uma nova a cada execução, e fa com o nome da cena (fa koi) reproduz aquela.",
+            "Scene": "Cena",
+            "Lava lamp": "Lâmpada de lava",
+            "Critters": "Criaturas",
+
+            "How Hyprland draws every window, this one included.":
+                "Como o Hyprland desenha cada janela, incluindo esta.",
+            "Dwindle splits the space each new window lands in, Master keeps one large window beside a stack, and Scrolling lays windows in a row wider than the screen. The preview below is live and at full size. The border stays at zero because gaps and rounding already separate windows; the inner gap applies to each side of a window, so two windows sit twice that apart.":
+                "Dwindle divide o espaço onde cada nova janela abre, Master mantém uma janela principal ao lado de uma pilha e Scrolling posiciona janelas em uma fileira mais larga que a tela. A prévia abaixo é em tempo real e em tamanho total. A borda fica em zero pois espaçamentos e cantos já separam as janelas; o espaço interno se aplica a cada lado da janela, totalizando o dobro entre duas janelas.",
+            "Window rounding": "Arredondamento das janelas",
+            "Border width": "Largura da borda",
+            "Inner gap": "Espaçamento interno",
+            "Outer gap": "Espaçamento externo",
+            "Inactive opacity": "Opacidade inativa",
+
+            "Depth": "Profundidade",
+            "Liquid": "Líquido",
+            "Clear frosted glass, lit at the edge": "Vidro fosco límpido, iluminado na borda",
+            "Terminal": "Terminal",
+            "size": "tamanho",
+            "Glass": "Vidro",
+            "Needs the refraction plugin — run ./setup plugins":
+                "Requer o plugin de refração, execute ./setup plugins",
+            "Shadow": "Sombra",
+            "Lifted off the wallpaper": "Destacado do papel de parede",
+            "Flat": "Plano",
+
+            "Interface": "Interface",
+            "Everything Quickshell draws.":
+                "Tudo o que o Quickshell renderiza.",
+            "Monospace": "Monoespaçada",
+            "The bar's glyphs and readings, and the terminal.":
+                "Os ícones e valores da barra, e o terminal.",
+            "kitty is given the same family, so the terminal and the shell always match. It must be a Nerd Font, or the bar's icons show as empty boxes.":
+                "O terminal kitty recebe a mesma fonte para manter consistência com o shell. Deve ser uma Nerd Font para que os ícones da barra não fiquem em branco.",
+            "Icons need a Nerd Font patched family.":
+                "Ícones requerem uma fonte modificada Nerd Font.",
+
+            "The shell": "O shell",
+            "The island, its panels, the chips — everything Qt draws.":
+                "A ilha, seus painéis, os chips, tudo o que o Qt renderiza.",
+            "Pace": "Velocidade",
+            "Smooth": "Suave",
+            "Snappy": "Rápido",
+            "Springy": "Elástico",
+            "How Hyprland animates windows. Reapplied after every reload.":
+                "Como o Hyprland anima janelas. Reaplica após cada recarga.",
+            "Preset": "Predefinição",
+            "Glide": "Deslizar",
+            "Brisk": "Dinâmico",
+            "Calm": "Calmo",
+            "Bounce": "Quicar",
+            "Scales into place and decelerates with a long tail. Quick, and it never bounces.":
+                "Aparece com escala suave e desacelera de forma limpa. Ágil e sem efeito elástico.",
+            "Half the distance and half the time. Movement you register rather than watch.":
+                "Metade da distância e metade do tempo. Movimento sutil e instantâneo.",
+            "Long and soft, and the screen fades between workspaces rather than sliding.":
+                "Longo e suave, com transição gradual entre espaços de trabalho em vez de deslizamento.",
+            "Overshoots a little and settles back. The look most Hyprland presets are after.":
+                "Ultrapassa levemente e estabiliza. O efeito característico da maioria dos temas do Hyprland.",
+            "Nothing moves. Windows and workspaces appear where they are going to be.":
+                "Nada se move. Janelas e espaços de trabalho aparecem diretamente na posição final.",
+
+            // ── DISPLAYS ────────────────────────────────────────────────────
+            "The screens": "As telas",
+            "Drag one to move it, click one to change it.":
+                "Arraste para mover, clique para alterar.",
+            "Arrangements are saved per set of connected monitors, identified by the monitor rather than the port, so moving a cable or closing the lid keeps them.":
+                "As disposições são salvas para cada conjunto de monitores conectados, identificadas pelo monitor e não pela porta, preservando as configurações mesmo ao trocar de conexão ou fechar a tampa.",
+            "Every screen shows the primary's": "Todas as telas espelham a principal",
+            "Extended across all of them": "Estendido entre todas elas",
+            "Extend": "Estender",
+            "Ten for each screen: the main one 1–10, the next 11–20": "Dez para cada tela: a principal de 1 a 10, a secundária de 11 a 20",
+            "Every screen shares the same ten": "Todas as telas compartilham os mesmos dez espaços",
+            "Shared": "Compartilhados",
+            "Per screen": "Por tela",
+            "Mirror": "Espelhar",
+            "The main screen": "A tela principal",
+            "Where anything with no screen of its own goes, and what mirroring copies.":
+                "Onde vai o que não tem tela própria, e o que o espelhamento duplica.",
+            "This arrangement": "Esta disposição",
+            "Kept against these screens and no others.":
+                "Salva para estas telas e nenhuma outra.",
+            "Forget it": "Esquecer",
+            "Hands these screens back to Hyprland's own placement":
+                "Devolve estas telas para a disposição padrão do Hyprland",
+            "Forget": "Esquecer",
+            "Which screen": "Qual tela",
+            "Editing": "Editando",
+            "Off — out of the layout, and still plugged in":
+                "Desligada (fora da disposição, ainda conectada)",
+            "Dark — the panel is asleep, and the workspaces are still on it":
+                "Escura (o painel está em repouso, e os espaços continuam nele)",
+            "The only screen there is": "A única tela disponível",
+            "Only one screen is plugged in": "Apenas uma tela está conectada",
+            "Only one screen is on": "Apenas uma tela está ligada",
+            "Rounded corners": "Cantos arredondados",
+            "Every screen's corners curve like the windows": "Os cantos de cada tela se curvam como as janelas",
+            "Square, as the panel is": "Retos, como o painel",
+            "Resolution": "Resolução",
+            "What the monitor itself reported, largest first.":
+                "O que o próprio monitor reportou, do maior para o menor.",
+            "Only the modes the monitor reports are listed. Choosing a resolution selects its highest refresh rate.":
+                "Apenas os modos reportados pelo monitor são listados. Escolher uma resolução seleciona sua maior taxa de atualização.",
+            "Refresh rate": "Taxa de atualização",
+            "The screen is off": "A tela está desligada",
+            "The only rate at this resolution": "A única taxa nesta resolução",
+            "Rotation": "Rotação",
+            "Variable refresh": "Taxa de atualização variável (VRR)",
+
+            "When the lid closes": "Quando a tampa fechar",
+            "Only applies with another screen connected.":
+                "Aplica-se apenas com outra tela conectada.",
+            "With nothing else connected, closing the lid is left to logind, which suspends. With another screen connected, the shell can switch the panel off and move its workspaces to the remaining screen, then bring them back when the lid opens.":
+                "Sem outra tela conectada, fechar a tampa é gerenciado pelo logind, que suspende. Com outra tela conectada, o shell pode desligar o painel do notebook e mover seus espaços para a tela restante, restaurando-os quando a tampa for aberta.",
+            "The laptop's screen": "A tela do notebook",
+            "Switched off, and its workspaces move over":
+                "Desliga, e seus espaços são transferidos",
+            "Left on behind the lid": "Permanece ligada com a tampa fechada",
+            "Left to the system": "Gerenciado pelo sistema",
+            "No laptop panel on this machine": "Nenhum painel de notebook nesta máquina",
+            "Switch it off": "Desligar",
+            "Leave it on": "Deixar ligada",
+            "The system decides": "O sistema decide",
+
+            "Right now": "Neste momento",
+            "The current state, as the shell detects it.":
+                "O estado atual, conforme detectado pelo shell.",
+            "The laptop's panel": "O painel do notebook",
+            "Not on this machine": "Não presente nesta máquina",
+            "%1 — off, and still plugged in": "%1: desligada (ainda conectada)",
+            "%1 — on": "%1: ligada",
+            "Other screens": "Outras telas",
+            "None — the system handles the lid": "Nenhum (o sistema gerencia a tampa)",
+
+            "Night light": "Luz noturna",
+
+            // ── INPUT ───────────────────────────────────────────────────────
+            "Layouts": "Layouts de teclado",
+            "Loaded in this order; the first is active at login.":
+                "Carregados nesta ordem; o primeiro fica ativo ao iniciar a sessão.",
+            "Switch between them": "Alternar entre eles",
+            "Only one layout is loaded": "Apenas um layout está configurado",
+            "Layouts, in order": "Layouts, em ordem",
+            "· the first is the one you start on": "· a primeira é onde você começa",
+            "Search {} layouts": "Buscar em {} layouts",
+            "Caps Lock": "Caps Lock",
+
+            "Typing": "Digitação",
+            "How fast a held key repeats, once it has started.":
+                "A rapidez com que uma tecla pressionada repete, após iniciar.",
+            "Key repeat rate": "Taxa de repetição de teclas",
+
+            "Zero is the device's native speed; either side adjusts libinput's acceleration.":
+                "Zero é a velocidade nativa do dispositivo; valores ajustam a aceleração do libinput.",
+            "Sensitivity": "Sensibilidade",
+
+            "The cursor": "O cursor",
+            "One vector shape, sharp at any size — Palette follows the wallpaper.":
+                "Formato vetorial, nítido em qualquer tamanho: a paleta segue o papel de parede.",
+            "Colour and size are applied with hyprctl setcursor, so every application updates at once and Palette follows wallpaper changes. Shake to find briefly enlarges the pointer when you shake the mouse; it needs the hypr-dynamic-cursors plugin (./setup plugins).":
+                "Cor e tamanho são aplicados com hyprctl setcursor para atualizar todos os aplicativos de uma vez. Agitar para localizar amplia o ponteiro ao mover o mouse rapidamente; requer o plugin hypr-dynamic-cursors (./setup plugins).",
+            "Cursor colour": "Cor do cursor",
+            "Cursor size": "Tamanho do cursor",
+            "24 px — the default": "24 px (o padrão)",
+            "Shake to find": "Agitar para localizar",
+            "Needs the cursor plugin — run ./setup plugins":
+                "Requer o plugin de cursor, execute ./setup plugins",
+            "Black": "Preto",
+            "White": "Branco",
+            "Red": "Vermelho",
+            "Orange": "Laranja",
+            "Yellow": "Amarelo",
+            "Green": "Verde",
+            "Blue": "Azul",
+            "Purple": "Roxo",
+            "Pink": "Rosa",
+
+            // ── KEYS ────────────────────────────────────────────────────────
+            "The shell's own": "Atalhos do shell",
+            "Click a combination to change it. Every key here belongs to the profile in use.":
+                "Clique em uma combinação para alterá-la. Cada tecla aqui pertence ao perfil ativo.",
+            "Each profile has its own complete set of keys. A combination already in use is allowed, since Hyprland fires both binds, but the row warns you before you apply it.":
+                "Cada perfil possui seu próprio conjunto completo de atalhos. Uma combinação já existente é permitida, pois o Hyprland executa ambos os atalhos, mas a linha avisa antes de aplicar.",
+            "The compositor's": "Atalhos do compositor",
+            "Windows, workspaces, the media keys, the screen off — changed the same way, and kept in the same profile.":
+                "Janelas, espaços de trabalho, teclas multimídia, tela desligada, alterados da mesma forma e mantidos no mesmo perfil.",
+            "The shell writes these to a file keybinds.lua reads, so applying a change reloads Hyprland. Mouse bindings are shown but cannot be rebound here.":
+                "O shell grava estes atalhos em um arquivo lido pelo keybinds.lua, recarregando o Hyprland ao aplicar. Atalhos de mouse são exibidos mas não podem ser redefinidos aqui.",
+            "Find a key or an action": "Buscar uma tecla ou ação",
+            "No binding matches that": "Nenhum atalho corresponde a isso",
+            "Utilities": "Utilitários",
+            "Other": "Outros",
+
+            "Control centre": "Central de controle",
+            "Colour picker": "Seletor de cores",
+            "Capture a region": "Capturar uma região",
+            "Capture a window": "Capturar uma janela",
+            "Capture the screen": "Capturar a tela inteira",
+            "Capture and annotate": "Capturar e anotar",
+            "Read a region": "Ler texto de uma região (OCR)",
+            "Record the screen": "Gravar a tela",
+            "Next module": "Próximo módulo",
+            "Previous module": "Módulo anterior",
+            "Clock swap": "Alternar relógio",
+
+            "unbound": "não atribuído",
+            "Press a key…": "Pressione uma tecla…",
+            "Click, then press a key": "Clique e pressione uma tecla",
+            "Pick the key, and any modifiers to hold with it.":
+                "Escolha a tecla e os modificadores correspondentes.",
+            "is already": "já é",
+            "Both would fire.": "Ambos seriam executados.",
+
+            // ── SESSION ─────────────────────────────────────────────────────
+            "You": "Você",
+            "Picture": "Foto de perfil",
+            "Click it, or drop an image here": "Clique ou arraste uma imagem aqui",
+            "Choose a picture": "Escolher uma imagem",
+            "Name": "Nome",
+
+            "Just enough to make the text underneath unreadable.":
+                "O suficiente para tornar o texto por baixo ilegível.",
+            "The preview uses the wallpaper, since the lock screen's own capture is taken when it locks. It applies the same blur with the capsule on top, so you can judge how it reads.":
+                "A prévia usa o papel de parede, já que a captura da tela de bloqueio ocorre no momento em que ela bloqueia. Ela aplica o mesmo desfoque com a cápsula por cima para avaliar a legibilidade.",
+            "No wallpaper to show": "Nenhum papel de parede para exibir",
+            "The login screen always draws it stacked.":
+                "A tela de login sempre o exibe empilhado.",
+            "The login screen runs before anyone has signed in, so it cannot read your settings.":
+                "A tela de login é executada antes de qualquer usuário entrar, portanto não pode ler suas configurações.",
+            "Stacked": "Empilhado",
+            "Inline": "Em linha",
+            "Type to unlock": "Digite para desbloquear",
+
+            "When you leave it alone": "Quando você deixar o computador ocioso",
+            "All three are off by default.":
+                "Todos os três vêm desativados por padrão.",
+            "The shell uses the compositor's idle notifications, and media that inhibits idle (mpv, browsers) holds all three off. Set screen off after the lock, since the lock captures the screen as it starts; suspend always locks first and is skipped if the lock does not come up.":
+                "O shell utiliza as notificações de inatividade do compositor, e mídias que inibem inatividade (como reprodutores e navegadores) suspendem os três temporizadores. Configure o desligamento de tela para depois do bloqueio, pois o bloqueio captura a tela ao iniciar; a suspensão sempre bloqueia antes.",
+            "Never": "Nunca",
+            "Lock after": "Bloquear após",
+            "Screen off after": "Desligar tela após",
+            "before the lock": "antes do bloqueio",
+            "Suspend after": "Suspender após",
+
+            // ── SYSTEM ──────────────────────────────────────────────────────
+            "Changes are saved to the profile in use as you make them.":
+                "As alterações são salvas no perfil ativo à medida que você as faz.",
+            "A profile holds the bar, widgets, dock, launcher, control centre, look, keys and wallpaper with its palette. Screens, your name and picture, language, weather location, GitHub user, Do not disturb and night light stay with the machine, and notes, tasks and clipboard are shared by every profile.":
+                "Um perfil reúne a barra, widgets, dock, inicializador, central de controle, visual, atalhos e papel de parede com sua paleta. Monitores, seu nome e foto, idioma, local do clima, usuário do GitHub, Não perturbe e luz noturna pertencem à máquina, enquanto notas, tarefas e área de transferência são compartilhados por todos os perfis.",
+            "Profile": "Perfil",
+            "New profile": "Novo perfil",
+            "Import…": "Importar…",
+            "In use": "Em uso",
+            "Switch": "Alternar",
+            "Delete": "Excluir",
+            "Keep": "Manter",
+            "Rename": "Renomear",
+            "Duplicate": "Duplicar",
+            "Export to a file…": "Exportar para um arquivo…",
+            "Export the profile": "Exportar o perfil",
+            "Import a profile": "Importar um perfil",
+            "Profiles (*.json)": "Perfis (*.json)",
+            "Deleted for good — there is no undo": "Excluído permanentemente, não há como desfazer",
+            "Enter to keep the name · Esc to leave it": "Enter para salvar o nome · Esc para cancelar",
+            "Grouped bar": "Barra agrupada",
+            "Spread bar": "Barra espalhada",
+            "dock at the bottom": "dock na parte inferior",
+            "dock on the left": "dock na esquerda",
+            "dock on the right": "dock na direita",
+            "no dock": "sem dock",
+            "nothing on the desk": "nada na área de trabalho",
+            "widget": "widget",
+            "widgets": "widgets",
+
+            "This window": "Esta janela",
+            "The language of this window.":
+                "O idioma desta janela.",
+            "Only the settings window is translated, and anything without a translation appears in English. Files the shell writes, such as generated themes, are always in English.":
+                "A janela de configurações é traduzida, e qualquer item sem tradução aparece em inglês. Arquivos gerados pelo shell permanecem em inglês.",
+            "Language": "Idioma",
+
+            "This machine": "Esta máquina",
+            "PROCESSOR": "PROCESSADOR",
+            "MEMORY": "MEMÓRIA",
+            "UPTIME": "ATIVIDADE",
+            "VERSION": "VERSÃO",
+            "edited": "editado",
+            "threads": "threads",
+            "% in use": "% em uso",
+            "since boot": "desde a inicialização",
+
+            "impasto itself, not the packages it runs.":
+                "o impasto em si, não os pacotes que ele executa.",
+            "Update pulls the checkout impasto was installed from and runs the installer again in a terminal, where its questions and your password stay visible.":
+                "Atualizar baixa o repositório a partir do qual o impasto foi instalado e executa o instalador novamente em um terminal, onde perguntas e senha ficam visíveis.",
+            "Check for updates": "Verificar atualizações",
+            "Check": "Verificar",
+            "Checking…": "Verificando…",
+            "Not checked yet": "Ainda não verificado",
+            "The remote did not answer": "O servidor remoto não respondeu",
+            "Up to date": "Atualizado",
+            "checked at": "verificado às",
+            "commit waiting": "commit pendente",
+            "commits waiting": "commits pendentes",
+            "Update": "Atualizar",
+            "To": "Para",
+            "Commits of your own are not on the remote":
+                "Existem commits locais que não estão no servidor remoto",
+            "No checkout to update from": "Nenhum repositório local para atualizar",
+            "No remote to compare with": "Nenhum servidor remoto para comparar",
+            "WHAT IS WAITING": "O QUE ESTÁ PENDENTE",
+            "more": "mais",
+
+            "Changed files": "Arquivos modificados",
+            "impasto's own files, as you left them.":
+                "Os arquivos do impasto, como você os deixou.",
+            "Updates leave a file you deleted deleted, and a file you edited as you edited it, with any newer version beside it as .new. Restore puts impasto's version back; yours, if there was one, is kept in ~/.local/state/impasto/backups.":
+                "Atualizações mantêm arquivos excluídos apagados e arquivos editados preservados, colocando versões mais recentes ao lado com extensão .new. Restaurar recupera a versão original do impasto; a sua versão é mantida em ~/.local/state/impasto/backups.",
+            "No checkout to restore from": "Nenhum repositório para restaurar",
+            "Every file as installed": "Todos os arquivos como instalados originalmente",
+            "file edited": "arquivo editado",
+            "files edited": "arquivos editados",
+            "file deleted": "arquivo excluído",
+            "files deleted": "arquivos excluídos",
+            "Restore all": "Restaurar tudo",
+            "Restore": "Restaurar",
+            "DELETED": "EXCLUÍDOS",
+            "EDITED": "EDITADOS",
+            "files": "arquivos",
+            "newer version waiting": "há uma versão mais recente",
+            "Keep mine": "Manter a minha versão",
+            "Use the new one": "Usar a nova versão",
+            "Show all": "Exibir todos",
+            "Show fewer": "Exibir menos",
+
+            "Face unlock": "Desbloqueio facial",
+            "The lock screen only, with the infrared camera.":
+                "Apenas na tela de bloqueio, com câmera infravermelha.",
+            "howdy keeps the faces where only root can read them, so adding or removing one asks for your password. The login screen, sudo and polkit still ask for the password.":
+                "O howdy armazena dados faciais com permissão root exclusiva, solicitando sua senha para adicionar ou remover rostos. A tela de login, sudo e polkit continuarão solicitando senha.",
+            "Needs an infrared camera": "Requer uma câmera infravermelha",
+            "Set up": "Configurar",
+            "Finish setting up": "Concluir configuração",
+            "Add a face": "Adicionar rosto",
+            "Confirm with your password, then look at the camera":
+                "Confirme com sua senha e olhe para a câmera",
+            "FACES": "ROSTOS",
+            "Try it": "Testar",
+            "Try": "Testar",
+            "Looking…": "Procurando…",
+            "Recognised": "Reconhecido",
+            "Not recognised": "Não reconhecido",
+            "Not set up": "Não configurado",
+            "Half set up": "Configuração parcial",
+            "Adding a face…": "Adicionando rosto…",
+            "Removing…": "Removendo…",
+            "Face added": "Rosto adicionado",
+            "No face seen — try with more light": "Nenhum rosto identificado: tente com mais iluminação",
+            "More than one face in view": "Mais de um rosto no enquadramento",
+            "Too dark for the camera": "Muito escuro para a câmera",
+            "The face was not added": "O rosto não foi adicionado",
+            "No face yet": "Nenhum rosto cadastrado ainda",
+            "Face %1": "Rosto %1",
+            "%1 face": "%1 rosto",
+            "%1 faces": "%1 rostos",
+
+            "Your account's name and picture, on the lock and login screens.":
+                "O nome e foto da sua conta nas telas de bloqueio e de login.",
+            "The name is your account's full name, and the picture is kept where the login screen reads it too, made square. Click the picture or drop an image on the card to change it.":
+                "O nome é o nome completo da conta, e a foto é mantida em formato quadrado onde a tela de login também a lê. Clique na foto ou arraste uma imagem sobre o cartão para alterá-la.",
+            "Saving…": "Salvando…",
+            "The picture was not changed": "A foto não foi alterada",
+            "The lock screen only, until ./setup system": "Apenas na tela de bloqueio, até executar ./setup system",
+            "On the lock and login screens": "Nas telas de bloqueio e de login",
+
+            "Only the profile in use. The others are left as they were.":
+                "Apenas o perfil ativo. Os demais permanecem inalterados.",
+            "Reset returns every setting in this profile to its default, clears the compositor overrides and reloads Hyprland. Machine settings such as screens, name, picture and language are kept, and there is no undo.":
+                "Restaura todas as configurações deste perfil para os padrões, limpa substituições do compositor e recarrega o Hyprland. Configurações da máquina como telas, nome, foto e idioma são mantidas.",
+            "Where the settings live": "Onde as configurações ficam salvas",
+            "Reset this profile": "Restaurar este perfil",
+            "Back to the defaults": "Voltar aos padrões",
+            "A Hyprland shell, and the desk around it":
+                "Um shell para o Hyprland e ambiente de trabalho integrado",
+
+            "A notch cuts the island into the top edge, and the bar's top margin no longer applies to it.":
+                "O notch recorta a ilha na borda superior, e a margem superior da barra deixa de se aplicar a ela.",
+            "Animation": "Animação",
+            "Bar": "Barra",
+            "Classic is solid black, Glass the accent-tinted ground over a blur of the wallpaper, and Liquid a clear frosted pane. Its typeface is the monospace one, under Type.":
+                "Clássico é preto sólido, Vidro é o fundo tingido sobre o desfoque do papel de parede, e Líquido é uma superfície translúcida límpida. A fonte utilizada é a monoespaçada, em Tipografia.",
+            "Classic is solid black, Glass the terminal's tinted ground over a blur of the wallpaper, and Liquid a clear frosted pane that lets the wallpaper's own colours through. The island is always the bar's.":
+                "Clássico é preto sólido, Vidro é o fundo tingido do terminal sobre o desfoque do papel de parede, e Líquido é uma superfície límpida que deixa transparecer as cores do fundo.",
+            "Classic is solid black, Glass the terminal's tinted ground over a blur of the wallpaper, and Liquid a clear frosted pane. Background sets how opaque the capsule is; lower it to let the blurred wallpaper through.":
+                "Clássico é preto sólido, Vidro é o fundo tingido do terminal sobre o desfoque do fundo, e Líquido é uma superfície translúcida. O Fundo ajusta a opacidade da cápsula.",
+            "How Hyprland lays out, draws and animates windows.":
+                "Como o Hyprland organiza, desenha e anima janelas.",
+            "How the bar is drawn round the island.":
+                "Como a barra é desenhada ao redor da ilha.",
+            "How the top bar is drawn, what it carries and its workspaces.":
+                "Como a barra superior é desenhada, o que ela contém e seus espaços de trabalho.",
+            "Inactive opacity fades the windows without focus. Blur shows behind anything translucent, such as the terminal. Refraction (a Hyprland plugin, tuned in look.lua) frosts and bends what is behind a window, like wet glass.":
+                "A opacidade inativa atenua janelas sem foco. O desfoque aparece atrás de elementos translúcidos, como o terminal. A refração (plugin do Hyprland ajustado em look.lua) desfoca e curva o que está atrás da janela, como vidro molhado.",
+            "Look them up": "Pesquisar letras",
+            "Looked up on lrclib.net by title and artist, which needs no account. They show in the island's glance and its media card, in the desktop's lyrics widget and on the lock screen when it is set to show them.":
+                "Buscadas no lrclib.net por título e artista, sem necessidade de conta. Aparecem na visão rápida da ilha, no cartão de mídia, no widget de letras da área de trabalho e na tela de bloqueio quando configurada para exibi-las.",
+            "Notes on the edges": "Notas nas bordas",
+            "Position": "Posição",
+            "Profiles, updates, language and this machine.":
+                "Perfis, atualizações, idioma e esta máquina.",
+            "The icon size everything on the dock scales with, and what the capsule is made of.":
+                "O tamanho de ícone que define a escala da dock e o acabamento da cápsula.",
+            "The island at rest, what runs beside the time, and notifications.":
+                "A ilha em repouso, o que fica ao lado da hora e as notificações.",
+            "The lyrics follow the Lyrics switch on the Modules page, and are looked up on lrclib.net.":
+                "As letras seguem o alternador de Letras na página Módulos e são consultadas no lrclib.net.",
+            "The notes stuck on the screen's edges and the spectrum's bars leave when a window opens and come back when the last one closes; the spectrum stops listening meanwhile. Off, the notes stay over the windows and the bars under them.":
+                "As notas fixadas nas bordas da tela e as barras de espectro desaparecem quando uma janela abre e retornam quando a última fecha; o espectro para de ouvir nesse período. Desativado, as notas ficam sobre as janelas e as barras sob elas.",
+            "The style keeps what is on the bar and only changes how it is drawn: grouped round the island, spread to the two edges, all inside one capsule, or a bezel across the top edge. What each side carries is arranged in Layout. Rounded corners round every screen, and curve under the bezel's ends.":
+                "O estilo mantém o conteúdo da barra e altera a forma de exibição: agrupado ao redor da ilha, espalhado nas duas pontas, tudo em uma cápsula ou moldura no topo. O conteúdo de cada lado é definido em Disposição. Cantos arredondados suavizam as bordas da tela e acompanham as pontas da moldura.",
+            "The words of whatever is playing, wherever they are shown.":
+                "As letras da música em reprodução, onde quer que sejam exibidas.",
+            "Their order is set by dragging them on the dock, and right-clicking a dock icon also keeps or removes it. The launcher puts them first, so the list stays editable with the dock off.":
+                "A ordem é definida arrastando os ícones na dock, e o clique com botão direito fixa ou remove. O inicializador os coloca no topo para que a lista permaneça editável com a dock desativada.",
+            "Wallpaper, terminal, fonts and the shell's motion.":
+                "Papel de parede, terminal, fontes e animações do shell.",
+            "What else the dock shows, and when it hides.":
+                "O que mais a dock exibe e quando ela se oculta.",
+            "What kitty's window is made of.": "O acabamento da janela do terminal kitty.",
+            "What makes way when a window opens on the workspace.":
+                "O que abre espaço quando uma janela é aberta no espaço de trabalho.",
+            "What shows through a window, and what lifts it off the wallpaper.":
+                "O que transparece pela janela e o que a destaca do papel de parede.",
+            "What the bar and the island are made of.":
+                "Do que são compostas a barra e a ilha.",
+            "What the modules know, on the bar, the desktop and the panels.":
+                "O que os módulos exibem na barra, na área de trabalho e nos painéis.",
+            "Where the island meets the top edge, and what opens it.":
+                "Onde a ilha encontra a borda superior e como ela é aberta.",
+            "While arranging, click a widget to override these for it alone. Modern shows a figure with a caption, Analogue draws an object such as a dial or a gauge, and Sticker cuts it out as coloured stickers on the wallpaper; the ground and the background set what the first two are made of and how opaque.":
+                "Durante a organização, clique em um widget para personalizar suas propriedades individuais. Moderno exibe um valor com legenda, Analógico desenha um medidor ou mostrador e Adesivo recorta formas coloridas sobre o papel de parede.",
+            "With more screens": "Com múltiplas telas",
+            "Your account, the lock screen, face unlock and idle behaviour.":
+                "Sua conta, a tela de bloqueio, desbloqueio facial e comportamento de inatividade.",
         }
     })
 }

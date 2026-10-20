@@ -211,28 +211,28 @@ Singleton {
     // included), `+3`, `12/9`, `12 sep`, `sep 12` or a day key. Weekday and
     // month names are accepted in English and Spanish.
     readonly property var dayNames: [
-        ["mon", "monday", "lun", "lunes"],
-        ["tue", "tuesday", "mar", "martes"],
-        ["wed", "wednesday", "mie", "mié", "miercoles", "miércoles"],
-        ["thu", "thursday", "jue", "jueves"],
-        ["fri", "friday", "vie", "viernes"],
+        ["mon", "monday", "lun", "lunes", "seg", "segunda", "segunda-feira"],
+        ["tue", "tuesday", "mar", "martes", "ter", "terca", "terça", "terca-feira", "terça-feira"],
+        ["wed", "wednesday", "mie", "mié", "miercoles", "miércoles", "qua", "quarta", "quarta-feira"],
+        ["thu", "thursday", "jue", "jueves", "qui", "quinta", "quinta-feira"],
+        ["fri", "friday", "vie", "viernes", "sex", "sexta", "sexta-feira"],
         ["sat", "saturday", "sab", "sáb", "sabado", "sábado"],
         ["sun", "sunday", "dom", "domingo"]
     ]
 
     readonly property var monthNames: [
-        ["jan", "january", "ene", "enero"],
-        ["feb", "february", "febrero"],
-        ["mar", "march", "marzo"],
+        ["jan", "january", "ene", "enero", "janeiro"],
+        ["feb", "february", "febrero", "fev", "fevereiro"],
+        ["mar", "march", "marzo", "março", "marco"],
         ["apr", "april", "abr", "abril"],
-        ["may", "mayo"],
-        ["jun", "june", "junio"],
-        ["jul", "july", "julio"],
+        ["may", "mayo", "mai", "maio"],
+        ["jun", "june", "junio", "junho"],
+        ["jul", "july", "julio", "julho"],
         ["aug", "august", "ago", "agosto"],
-        ["sep", "sept", "september", "septiembre"],
-        ["oct", "october", "octubre"],
-        ["nov", "november", "noviembre"],
-        ["dec", "december", "dic", "diciembre"]
+        ["sep", "sept", "september", "septiembre", "set", "setembro"],
+        ["oct", "october", "octubre", "out", "outubro"],
+        ["nov", "november", "noviembre", "novembro"],
+        ["dec", "december", "dic", "diciembre", "dez", "dezembro"]
     ]
 
     function monthIndex(word: string): int {
