@@ -294,6 +294,11 @@ PanelWindow {
     // (`ModuleService.activate`). Clicking the open module again closes it; any
     // other replaces it.
     function activate(id: string): void {
+        if (id === "keyboard") {
+            KeyboardService.toggle()
+            return
+        }
+
         if (ModuleService.openId === id) {
             root.dismiss()
             return

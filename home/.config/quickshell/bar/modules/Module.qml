@@ -46,7 +46,8 @@ Item {
         games: gamesModule,
         notes: notesModule,
         tasks: tasksModule,
-        notifications: notificationsModule
+        notifications: notificationsModule,
+        keyboard: keyboardModule
     })
 
     implicitWidth: holder.implicitWidth
@@ -81,4 +82,5 @@ Item {
     Component { id: notesModule;      NotesModule {} }
     Component { id: tasksModule;      TasksModule {} }
     Component { id: notificationsModule; NotificationsModule {} }
+    Component { id: keyboardModule; KeyboardModule {} }
 }
