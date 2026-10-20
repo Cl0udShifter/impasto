@@ -11,6 +11,10 @@
 // transparent surface.
 //@ pragma Env QSG_DISTANCEFIELD_ANTIALIASING=gray
 
+// Threaded render loop and frame callbacks for smooth 144Hz multi-monitor animations:
+//@ pragma Env QSG_RENDER_LOOP=threaded
+//@ pragma Env QT_WAYLAND_FRAME_CALLBACK_TIMING=1
+
 // Application icons: one set, the same shape for every app.
 //@ pragma IconTheme WhiteSur-dark
 
