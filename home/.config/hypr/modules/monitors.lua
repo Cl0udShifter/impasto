@@ -13,6 +13,13 @@
 -- MonitorService, which keeps a profile for each set of connected screens.
 
 hl.monitor({
+    output   = "DP-1",
+    mode     = "highrr",
+    position = "auto",
+    scale    = 1,
+})
+
+hl.monitor({
     output   = "",
     mode     = "preferred",
     position = "auto",

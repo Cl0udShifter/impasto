@@ -67,7 +67,7 @@ ORDER = ("output", "disabled", "mode", "position", "scale",
          "transform", "mirror", "vrr", "bitdepth")
 
 # How `hyprctl monitors` prints an available mode: "2560x1440@144.00Hz".
-MODE_LINE = re.compile(r"(\d{1,5})x(\d{1,5})@([\d.]+)Hz")
+MODE_LINE = re.compile(r"(\d{1,5})x(\d{1,5})@([\d.]+)\s*(?:Hz)?", re.IGNORECASE)
 
 
 def hyprctl(*arguments):
@@ -123,6 +123,8 @@ def rule_chunk(rule):
     for field in ORDER:
         if field not in rule:
             continue
+        if field == "mirror" and rule[field] in ("none", "", None):
+            continue
         literal = literal_for(field, rule[field])
         if literal is None:
             return None
@@ -162,7 +164,7 @@ def group_modes(modes):
     for mode in modes:
         grouped.setdefault((mode["width"], mode["height"]), []).append(mode["refresh"])
     return [
-        {"width": width, "height": height, "refreshes": sorted(rates, reverse=True)}
+        {"width": width, "height": height, "refreshes": sorted(list(dict.fromkeys(rates)), reverse=True)}
         for (width, height), rates in sorted(grouped.items(),
                                              key=lambda row: -(row[0][0] * row[0][1]))
     ]
@@ -173,9 +175,18 @@ def described(monitor, names):
     width = monitor.get("width") or 0
     height = monitor.get("height") or 0
     refresh = monitor.get("refreshRate") or 0.0
+    if width and height and refresh > 0:
+        current_name = f"{width}x{height}@{refresh:.2f}"
+        if not any(m["width"] == width and m["height"] == height and abs(m["refresh"] - refresh) < 0.05 for m in modes):
+            modes.append({
+                "mode": current_name, "width": width, "height": height, "refresh": round(refresh, 2),
+            })
+            modes.sort(key=lambda mode: (-(mode["width"] * mode["height"]), -mode["refresh"]))
+    name = monitor.get("name") or ""
+    desc = monitor.get("description") or name
     return {
-        "name": monitor.get("name") or "",
-        "description": monitor.get("description") or "",
+        "name": name,
+        "description": desc,
         "make": monitor.get("make") or "",
         "model": monitor.get("model") or "",
         "serial": monitor.get("serial") or "",

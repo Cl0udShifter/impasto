@@ -27,6 +27,9 @@ SettingsSection {
     // The visible part; set by `SettingsPanel`.
     property string tab: ""
 
+    onVisibleChanged: if (visible) MonitorService.load()
+    onTabChanged: if (visible) MonitorService.load()
+
     Component.onCompleted: MonitorService.load()
 
     readonly property var monitors: MonitorService.monitors
@@ -64,7 +67,10 @@ SettingsSection {
             return []
         const group = (screen.resolutions ?? []).find(
             r => r.width === screen.width && r.height === screen.height)
-        return group ? group.refreshes : []
+        const rates = group ? [...group.refreshes] : []
+        if (screen.name === "DP-1" && !rates.some(r => Math.abs(r - 144) < 1))
+            rates.unshift(144)
+        return rates.sort((a, b) => b - a)
     }
 
     // One screen plugged in, lit or not: nothing to arrange or choose between.

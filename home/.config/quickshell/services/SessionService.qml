@@ -96,6 +96,7 @@ Singleton {
         if (!going) {
             root.sleepPending = false
             root.sleepHold.running = true
+            MonitorService.wakeUp()
             return
         }
         if (LockService.secure) {

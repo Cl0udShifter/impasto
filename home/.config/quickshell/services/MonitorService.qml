@@ -154,7 +154,13 @@ Singleton {
             rule.mirror = primary
             delete rule.position
         } else {
-            rule.mirror = "none"
+            delete rule.mirror
+        }
+        if (rule.position === undefined && !root.mirroring) {
+            rule.position = found?.position ?? "auto"
+        }
+        if (rule.scale === undefined) {
+            rule.scale = found?.scale ?? 1
         }
         return rule
     }
@@ -228,11 +234,13 @@ Singleton {
             return true
         if (found.disabled)
             return false
+        const ruleMirror = rule.mirror ?? "none"
+        const foundMirror = found.mirror ?? "none"
         return (rule.mode !== undefined && rule.mode !== found.mode)
             || (rule.position !== undefined && rule.position !== found.position)
             || (rule.scale !== undefined && Number(rule.scale) !== Number(found.scale))
             || (rule.transform !== undefined && Number(rule.transform) !== Number(found.transform))
-            || (rule.mirror !== undefined && rule.mirror !== found.mirror)
+            || (ruleMirror !== foundMirror)
             || (rule.vrr !== undefined && Number(rule.vrr) !== Number(found.vrr))
     }
 
@@ -245,7 +253,10 @@ Singleton {
             const rule = root.effectiveRule(description)
             if (!rule || !root.differs(description, rule))
                 continue
-            rules.push(Object.assign({}, rule, { output: `desc:${description}` }))
+            const found = root.monitorFor(description)
+            const targetOutput = description.startsWith("desc:") || (found && description === found.name)
+                ? description : `desc:${description}`
+            rules.push(Object.assign({}, rule, { output: targetOutput }))
         }
         if (rules.length === 0)
             return
@@ -410,7 +421,13 @@ Singleton {
         }
     }
 
-    readonly property Process applier: Process {}
+    readonly property Process applier: Process {
+        onExited: exitCode => {
+            if (exitCode !== 0)
+                console.warn("Cannot apply monitor configuration:", exitCode)
+            root.load()
+        }
+    }
 
     // A reload resets monitors to the Lua config and a hotplug may change the
     // profile; either way, re-read and reconcile.
@@ -424,10 +441,30 @@ Singleton {
             case "monitoraddedv2":
             case "monitorremoved":
             case "monitorremovedv2":
+            case "dpms":
                 root.hotplug.restart()
                 break
             }
         }
+    }
+
+    // Reconciles and reapplies monitor profiles after waking from suspend.
+    function wakeUp(): void {
+        root.disturbed = true
+        root.wakeTimer.restart()
+    }
+
+    readonly property Timer wakeTimer: Timer {
+        interval: 1000
+        onTriggered: {
+            root.load()
+            root.wakeFollowup.restart()
+        }
+    }
+
+    readonly property Timer wakeFollowup: Timer {
+        interval: 1500
+        onTriggered: root.load()
     }
 
     // One read per burst of events.
