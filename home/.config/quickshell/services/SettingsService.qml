@@ -56,6 +56,7 @@ Singleton {
     readonly property alias centreToggles: config.centreToggles
     readonly property alias dockEnabled: config.dockEnabled
     readonly property alias dockPinned: config.dockPinned
+    readonly property alias autostart: config.autostart
     readonly property alias dockEdge: config.dockEdge
     readonly property alias dockAlignment: config.dockAlignment
     readonly property alias dockIconSize: config.dockIconSize
@@ -340,7 +341,7 @@ Singleton {
     // the person: kept across switches, left out of exports and untouched by
     // Reset. The recorder and capture entries are last-used state.
     readonly property var machineKeys: [
-        "displays", "lidPolicy", "workspaceMode",
+        "displays", "lidPolicy", "workspaceMode", "autostart",
         "userName", "userAvatar", "language", "keyboard", "weatherPlace", "githubUser", "markets",
         "emojiTone",
         "doNotDisturb", "nightLight", "nightTemperature", "barHidden", "barAutohide", "desktopHidden",
@@ -823,6 +824,10 @@ Singleton {
         // Pinned desktop entry ids, in order. Name, icon and command are
         // read from the entry.
         property var dockPinned: []
+
+        // User applications and scripts launched on session start:
+        // [{ id, name, icon, exec, monitor, workspace, enabled }]
+        property var autostart: []
 
         // Any edge but the top, which is the bar's.
         property string dockEdge: "bottom"

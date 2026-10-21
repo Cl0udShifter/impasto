@@ -78,6 +78,8 @@ ShellRoot {
         void ProfileService.arrived
         // Lists the virtual camera, so a call can pick it.
         void CameraService.ready
+        // Runs startup user applications on boot.
+        void AutostartService.bootstrap()
     }
 
     // ── SCREENS ─────────────────────────────────────────────────────────────

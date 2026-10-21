@@ -132,8 +132,9 @@ Item {
           blurb: Tr.t("Your account, the lock screen, face unlock and idle behaviour."),
           tabs: [{ id: "lock", label: Tr.t("Lock screen") },
                  { id: "face", label: Tr.t("Face unlock") },
-                 { id: "idle", label: Tr.t("When you leave") }],
-          keywords: "session lock blur password suspend security idle timeout sleep screen off dpms away never lock after avatar picture name account clock stacked inline flip face unlock howdy camera infrared enrol enroll scan faces recognise music song lyrics cover now playing",
+                 { id: "idle", label: Tr.t("When you leave") },
+                 { id: "autostart", label: Tr.t("Autostart") }],
+          keywords: "session lock blur password suspend security idle timeout sleep screen off dpms away never lock after avatar picture name account clock stacked inline flip face unlock howdy camera infrared enrol enroll scan faces recognise music song lyrics cover now playing autostart startup apps applications boot workspace display monitor",
           page: sessionPage },
 
         { id: "system", category: "session", icon: "󰍛", label: Tr.t("System"),

@@ -1154,7 +1154,24 @@ QtObject {
                 "Al colocar, haz clic en un widget para cambiar esto solo para él. Moderno muestra una cifra con un rótulo, Analógico dibuja un objeto como una esfera o un indicador, y Pegatina lo recorta como pegatinas de colores sobre el fondo de pantalla; el material y el fondo deciden de qué están hechos los dos primeros y su opacidad.",
             "With more screens": "Con más pantallas",
             "Your account, the lock screen, face unlock and idle behaviour.":
-                "Tu cuenta, la pantalla de bloqueo, el desbloqueo facial y la inactividad."
+                "Tu cuenta, la pantalla de bloqueo, el desbloqueo facial y la inactividad.",
+            "Autostart": "Inicio automático",
+            "Startup Applications": "Aplicaciones de inicio",
+            "Applications and scripts launched automatically when you log in.":
+                "Aplicaciones y comandos iniciados automáticamente al iniciar sesión.",
+            "Assign each application to a specific workspace and display, so your desktop is arranged the moment you start.":
+                "Asigne cada aplicación a un espacio de trabajo y pantalla para organizar su escritorio al iniciar.",
+            "No startup applications yet.": "No hay aplicaciones de inicio todavía.",
+            "Any display": "Cualquier pantalla",
+            "Launch now": "Iniciar ahora",
+            "Launch all": "Iniciar todos",
+            "Test startup": "Probar inicio",
+            "Launch all enabled applications now": "Ejecuta todas las aplicaciones activadas ahora.",
+            "Add command": "Añadir comando",
+            "Command or script to run": "Comando o script a ejecutar",
+            "Application name": "Nombre de la aplicación",
+            "Pick an installed application or enter a custom command.":
+                "Elija una aplicación instalada o introduzca un comando personalizado."
         },
         pt: {
             // ── SHARED ──────────────────────────────────────────────────────
@@ -2273,6 +2290,23 @@ QtObject {
             "With more screens": "Com múltiplas telas",
             "Your account, the lock screen, face unlock and idle behaviour.":
                 "Sua conta, a tela de bloqueio, desbloqueio facial e comportamento de inatividade.",
+            "Autostart": "Inicialização",
+            "Startup Applications": "Aplicativos de Inicialização",
+            "Applications and scripts launched automatically when you log in.":
+                "Aplicativos e comandos iniciados automaticamente ao entrar na sessão.",
+            "Assign each application to a specific workspace and display, so your desktop is arranged the moment you start.":
+                "Defina o monitor e a área de trabalho de cada aplicativo para organizar seu espaço ao iniciar.",
+            "No startup applications yet.": "Nenhum aplicativo na inicialização ainda.",
+            "Any display": "Qualquer tela",
+            "Launch now": "Iniciar agora",
+            "Launch all": "Iniciar todos",
+            "Test startup": "Testar inicialização",
+            "Launch all enabled applications now": "Executa todos os aplicativos ativados agora.",
+            "Add command": "Adicionar comando",
+            "Command or script to run": "Comando ou script a executar",
+            "Application name": "Nome do aplicativo",
+            "Pick an installed application or enter a custom command.":
+                "Escolha um aplicativo instalado ou digite um comando personalizado."
         }
     })
 }

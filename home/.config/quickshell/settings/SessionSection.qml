@@ -712,4 +712,8 @@ SettingsSection {
             onMoved: value => SettingsService.set("idleSuspend", Math.round(value))
         }
     }
+
+    AutostartPart {
+        visible: root.tab === "autostart"
+    }
 }
