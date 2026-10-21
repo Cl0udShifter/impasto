@@ -105,9 +105,9 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "Battery"
+            label: Tr.t("Battery")
             reading: BatteryService.available ? `${BatteryService.percent}%` : "—"
-            note: BatteryService.available ? BatteryService.estimate : "no battery"
+            note: BatteryService.available ? BatteryService.estimate : Tr.t("no battery")
             extraShare: 0.42
 
             BatteryWidget { size: 40; glyphColor: root.ink.text; track: root.ink.dim }
@@ -149,9 +149,9 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "Volume"
-            reading: AudioService.muted ? "Muted" : `${AudioService.volume}%`
-            note: AudioService.muted ? "output silenced" : "output"
+            label: Tr.t("Volume")
+            reading: AudioService.muted ? Tr.t("Muted") : `${AudioService.volume}%`
+            note: AudioService.muted ? Tr.t("output silenced") : Tr.t("output")
             tint: AudioService.muted ? root.ink.muted : root.ink.text
             extraShare: 0.42
 
@@ -189,9 +189,9 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "Brightness"
+            label: Tr.t("Brightness")
             reading: BrightnessService.available ? `${BrightnessService.percent}%` : "—"
-            note: BrightnessService.available ? "backlight" : "no backlight"
+            note: BrightnessService.available ? Tr.t("backlight") : Tr.t("no backlight")
             extraShare: 0.42
 
             RingIndicator {
@@ -228,12 +228,12 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "Claude"
+            label: Tr.t("Claude")
             reading: !ClaudeService.available ? "—"
                 : ClaudeService.sessionMeasured
                 ? ClaudeService.percent(ClaudeService.sessionFraction)
                 : ClaudeService.compact(ClaudeService.blockTokens)
-            note: !ClaudeService.available ? "no usage found"
+            note: !ClaudeService.available ? Tr.t("no usage found")
                 : ClaudeService.sessionMeasured
                 ? `of this block · ${ClaudeService.compact(ClaudeService.blockTokens)}`
                 : `this block · ${ClaudeService.messages(ClaudeService.blockMessages)}`
@@ -281,11 +281,11 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "Codex"
+            label: Tr.t("Codex")
             reading: CodexService.figure
-            note: !CodexService.available ? "no usage found"
+            note: !CodexService.available ? Tr.t("no usage found")
                 : CodexService.fullest ? `of the ${CodexService.fullestName}`
-                : "until Codex runs again"
+                : Tr.t("until Codex runs again")
             extraShare: 0.42
 
             CodexMark {
@@ -332,7 +332,7 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "System"
+            label: Tr.t("System")
             reading: `${StatsService.cpu.toFixed(0)}%`
             note: `RAM ${Math.round(StatsService.memoryFraction * 100)}% · load ${StatsService.load[0].toFixed(2)}`
             extraShare: 0.45
@@ -374,7 +374,7 @@ Item {
 
             label: WeatherService.place || "Weather"
             reading: WeatherService.available ? `${WeatherService.temperature}°` : "--°"
-            note: !WeatherService.available ? "no forecast"
+            note: !WeatherService.available ? Tr.t("no forecast")
                 : WeatherService.description !== ""
                 ? `${WeatherService.description} · ${WeatherService.high}° / ${WeatherService.low}°`
                 : `${WeatherService.high}° / ${WeatherService.low}°`
@@ -450,13 +450,13 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "Updates"
+            label: Tr.t("Updates")
             reading: UpdatesService.available || UpdatesService.checking
                 ? `${UpdatesService.count}` : "—"
             note: UpdatesService.checking
                 ? "checking"
-                : (!UpdatesService.available ? "cannot check"
-                    : (UpdatesService.count === 0 ? "up to date" : "pending"))
+                : (!UpdatesService.available ? Tr.t("cannot check")
+                    : (UpdatesService.count === 0 ? Tr.t("up to date") : Tr.t("pending")))
             tint: UpdatesService.count === 0 ? root.ink.muted : root.ink.text
             extraShare: 0.45
 
@@ -502,10 +502,10 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "Bluetooth"
+            label: Tr.t("Bluetooth")
             reading: BluetoothService.summary
-            note: !BluetoothService.available ? "no adapter"
-                : (BluetoothService.enabled ? "adapter on" : "adapter off")
+            note: !BluetoothService.available ? Tr.t("no adapter")
+                : (BluetoothService.enabled ? Tr.t("adapter on") : Tr.t("adapter off"))
             extraShare: 0.42
 
             Text {
@@ -553,7 +553,7 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "Network"
+            label: Tr.t("Network")
             reading: NetworkService.connectionName
             note: NetworkService.stateLine
 
@@ -578,11 +578,11 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "Timer"
+            label: Tr.t("Timer")
             reading: TimerService.running ? TimerService.display : "—"
             note: TimerService.running
-                ? (TimerService.label !== "" ? TimerService.label : "counting down")
-                : "nothing running"
+                ? (TimerService.label !== "" ? TimerService.label : Tr.t("counting down"))
+                : Tr.t("nothing running")
             tint: TimerService.running ? root.ink.text : root.ink.muted
             extraShare: 0.4
 
@@ -635,8 +635,8 @@ Item {
             ink: root.ink
             label: MediaService.artist !== "" ? MediaService.artist : "Media"
             reading: MediaService.title !== "" ? MediaService.title
-                : (MediaService.available ? MediaService.identity : "Nothing playing")
-            note: !MediaService.available ? "no player"
+                : (MediaService.available ? MediaService.identity : Tr.t("Nothing playing"))
+            note: !MediaService.available ? Tr.t("no player")
                 : (MediaService.playing ? "playing" : "paused")
             extraShare: 0.4
 
@@ -944,10 +944,10 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "Tasks"
+            label: Tr.t("Tasks")
             reading: `${TasksService.pending}`
             note: TasksService.pending === 0
-                ? (TasksService.count === 0 ? "nothing yet" : "all done")
+                ? (TasksService.count === 0 ? Tr.t("nothing yet") : Tr.t("all done"))
                 : TasksService.summary
             tint: TasksService.overdue.length > 0 ? Theme.red : root.ink.text
             extraShare: 0.55
@@ -1031,7 +1031,7 @@ Item {
             ink: root.ink
             label: MarketsService.lead ? `${MarketsService.lead.base}/${MarketsService.lead.quote}` : "Markets"
             note: !MarketsService.lead
-                ? (MarketsService.pairs.length === 0 ? "nothing on the list" : "no prices")
+                ? (MarketsService.pairs.length === 0 ? Tr.t("nothing on the list") : Tr.t("no prices"))
                 : `${MarketsService.change(MarketsService.lead)} · ${MarketsService.lead.period}`
             noteTint: MarketsService.lead ? MarketsService.tint(MarketsService.lead) : root.ink.muted
 

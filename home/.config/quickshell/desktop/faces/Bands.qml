@@ -94,7 +94,7 @@ Item {
 
             label: WeatherService.place || "Weather"
             reading: WeatherService.available ? `${WeatherService.temperature}°` : "--°"
-            note: !WeatherService.available ? "no forecast"
+            note: !WeatherService.available ? Tr.t("no forecast")
                 : WeatherService.description !== ""
                 ? `${WeatherService.description} · feels ${WeatherService.feelsLike}° · ${WeatherService.high}° / ${WeatherService.low}°`
                 : `feels ${WeatherService.feelsLike}° · ${WeatherService.high}° / ${WeatherService.low}°`
@@ -204,7 +204,7 @@ Item {
             ink: root.ink
             label: MarketsService.lead ? `${MarketsService.lead.base}/${MarketsService.lead.quote}` : "Markets"
             note: !MarketsService.lead
-                ? (MarketsService.pairs.length === 0 ? "nothing on the list" : "no prices")
+                ? (MarketsService.pairs.length === 0 ? Tr.t("nothing on the list") : Tr.t("no prices"))
                 : `${MarketsService.change(MarketsService.lead)} · ${MarketsService.lead.period}`
             noteTint: MarketsService.lead ? MarketsService.tint(MarketsService.lead) : root.ink.muted
 

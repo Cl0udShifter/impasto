@@ -25,10 +25,10 @@ Instrument {
         ? ClaudeService.percent(ClaudeService.sessionFraction)
         : ClaudeService.compact(ClaudeService.blockTokens)
 
-    line: !ClaudeService.available ? "No usage found"
+    line: !ClaudeService.available ? Tr.t("No usage found")
         : (ClaudeService.sessionMeasured ? `${face.figure} of this block` : `${face.figure} this block`)
     reading: face.figure
-    note: !ClaudeService.available ? "no usage found"
+    note: !ClaudeService.available ? Tr.t("no usage found")
         : ClaudeService.sessionMeasured
         ? `of this block · ${ClaudeService.resetsIn}`
         : `this block · ${ClaudeService.resetsIn}`

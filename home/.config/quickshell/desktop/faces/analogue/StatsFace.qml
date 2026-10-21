@@ -126,11 +126,11 @@ Item {
 
                 Repeater {
                     model: [
-                        { title: "Processor", reading: `${StatsService.cpu.toFixed(0)}%`,
+                        { title: Tr.t("Processor"), reading: `${StatsService.cpu.toFixed(0)}%`,
                           series: StatsService.cpuHistory },
-                        { title: "Memory", reading: StatsService.bytes(StatsService.memoryUsed),
+                        { title: Tr.t("Memory"), reading: StatsService.bytes(StatsService.memoryUsed),
                           series: StatsService.memoryHistory },
-                        { title: "Network", reading: StatsService.rate(StatsService.networkDown),
+                        { title: Tr.t("Network"), reading: StatsService.rate(StatsService.networkDown),
                           series: StatsService.downHistory }
                     ]
 

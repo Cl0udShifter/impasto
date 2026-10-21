@@ -49,6 +49,7 @@ SettingsSection {
     }
 
     readonly property bool currentOff: root.current?.disabled ?? false
+    readonly property var currentRule: root.current ? MonitorService.ruleFor(root.current.description) : null
 
     // Merges fields into the selected screen's stored rule.
     function change(fields: var): void {
@@ -315,7 +316,7 @@ SettingsSection {
                 reason: Tr.t("The screen is off")
 
                 ToggleSwitch {
-                    checked: (root.current?.vrr ?? 0) !== 0
+                    checked: root.currentRule?.vrr !== undefined ? root.currentRule.vrr !== 0 : (root.current?.vrr ?? 0) !== 0
                     onToggled: checked => root.change({ vrr: checked ? 1 : 0 })
                 }
             }

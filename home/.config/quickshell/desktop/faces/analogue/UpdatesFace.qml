@@ -20,12 +20,12 @@ Instrument {
     readonly property bool none: UpdatesService.count === 0
 
     line: UpdatesService.checking ? "Checking"
-        : (!UpdatesService.available ? "Cannot check"
-            : (face.none ? "Up to date" : `${UpdatesService.count} pending`))
+        : (!UpdatesService.available ? Tr.t("Cannot check")
+            : (face.none ? Tr.t("Up to date") : `${UpdatesService.count} pending`))
     reading: UpdatesService.available || UpdatesService.checking ? `${UpdatesService.count}` : "—"
     note: UpdatesService.checking ? "checking"
-        : !UpdatesService.available ? "cannot check"
-        : `${face.none ? "up to date" : "pending"}${UpdatesService.age !== "" ? " · " + UpdatesService.age : ""}`
+        : !UpdatesService.available ? Tr.t("cannot check")
+        : `${face.none ? Tr.t("up to date") : Tr.t("pending")}${UpdatesService.age !== "" ? " · " + UpdatesService.age : ""}`
     tint: face.none ? face.ink.muted : face.ink.text
     filled: true
 

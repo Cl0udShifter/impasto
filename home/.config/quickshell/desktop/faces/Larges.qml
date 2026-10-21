@@ -70,7 +70,7 @@ Item {
 
             label: WeatherService.place || "Weather"
             reading: WeatherService.available ? `${WeatherService.temperature}°` : "--°"
-            note: !WeatherService.available ? "no forecast"
+            note: !WeatherService.available ? Tr.t("no forecast")
                 : WeatherService.description !== ""
                 ? `${WeatherService.description} · feels ${WeatherService.feelsLike}° · ${WeatherService.high}° / ${WeatherService.low}°`
                 : `feels ${WeatherService.feelsLike}° · ${WeatherService.high}° / ${WeatherService.low}°`
@@ -152,7 +152,7 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "System"
+            label: Tr.t("System")
             reading: `${StatsService.cpu.toFixed(0)}%`
             note: `load ${StatsService.load[0].toFixed(2)} · ${StatsService.window}`
 
@@ -173,12 +173,12 @@ Item {
 
                     Repeater {
                         model: [
-                            { title: "Processor", reading: `${StatsService.cpu.toFixed(0)}%`,
+                            { title: Tr.t("Processor"), reading: `${StatsService.cpu.toFixed(0)}%`,
                               series: StatsService.cpuHistory },
-                            { title: "Memory",
+                            { title: Tr.t("Memory"),
                               reading: `${StatsService.bytes(StatsService.memoryUsed)}`,
                               series: StatsService.memoryHistory },
-                            { title: "Network",
+                            { title: Tr.t("Network"),
                               reading: StatsService.rate(StatsService.networkDown),
                               series: StatsService.downHistory }
                         ]
@@ -235,7 +235,7 @@ Item {
             ink: root.ink
             label: "Claude"
             reading: ClaudeService.available ? ClaudeService.compact(ClaudeService.blockTokens) : "—"
-            note: !ClaudeService.available ? "no usage found"
+            note: !ClaudeService.available ? Tr.t("no usage found")
                 : `this block · ${ClaudeService.messages(ClaudeService.blockMessages)} · ${ClaudeService.resetsIn}`
 
             ClaudeMark {
@@ -325,7 +325,7 @@ Item {
             ink: root.ink
             label: "Codex"
             reading: CodexService.figure
-            note: !CodexService.available ? "no usage found"
+            note: !CodexService.available ? Tr.t("no usage found")
                 : [CodexService.plan, CodexService.age].filter(part => part !== "").join(" · ")
 
             CodexMark {
@@ -688,7 +688,7 @@ Item {
                 Text {
                     Layout.fillWidth: true
                     text: MediaService.title !== "" ? MediaService.title
-                        : (MediaService.available ? MediaService.identity : "Nothing playing")
+                        : (MediaService.available ? MediaService.identity : Tr.t("Nothing playing"))
                     elide: Text.ElideRight
                     font.family: Theme.fontFamily
                     font.pixelSize: Theme.fontSizeMedium
@@ -698,7 +698,7 @@ Item {
 
                 Text {
                     Layout.fillWidth: true
-                    text: MediaService.available ? MediaService.artist : "no player"
+                    text: MediaService.available ? MediaService.artist : Tr.t("no player")
                     elide: Text.ElideRight
                     font.family: Theme.fontFamily
                     font.pixelSize: Theme.fontSizeSmall
@@ -763,10 +763,10 @@ Item {
         WidgetFace {
 
             ink: root.ink
-            label: "Tasks"
+            label: Tr.t("Tasks")
             reading: `${TasksService.pending}`
             note: TasksService.pending === 0
-                ? (TasksService.count === 0 ? "nothing yet" : "all done")
+                ? (TasksService.count === 0 ? Tr.t("nothing yet") : Tr.t("all done"))
                 : TasksService.summary
             tint: TasksService.overdue.length > 0 ? Theme.red : root.ink.text
 
@@ -827,7 +827,7 @@ Item {
             ink: root.ink
             label: MarketsService.lead ? `${MarketsService.lead.base}/${MarketsService.lead.quote}` : "Markets"
             note: !MarketsService.lead
-                ? (MarketsService.pairs.length === 0 ? "nothing on the list" : "no prices")
+                ? (MarketsService.pairs.length === 0 ? Tr.t("nothing on the list") : Tr.t("no prices"))
                 : `${MarketsService.change(MarketsService.lead)} · ${MarketsService.lead.period}`
             noteTint: MarketsService.lead ? MarketsService.tint(MarketsService.lead) : root.ink.muted
 

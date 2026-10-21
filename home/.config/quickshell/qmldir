@@ -7,6 +7,7 @@ singleton Board              1.0 theme/Board.qml
 singleton Tr                 1.0 theme/Tr.qml
 
 singleton SettingsService    1.0 services/SettingsService.qml
+singleton AutostartService   1.0 services/AutostartService.qml
 singleton ThemeService       1.0 services/ThemeService.qml
 singleton WallpaperService   1.0 services/WallpaperService.qml
 singleton LauncherService    1.0 services/LauncherService.qml

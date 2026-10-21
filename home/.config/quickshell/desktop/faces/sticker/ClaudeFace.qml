@@ -24,8 +24,8 @@ Spread {
         : ClaudeService.compact(ClaudeService.blockTokens)
 
     hue: face.ink.accent
-    reading: ClaudeService.available ? `${face.figure} of this block` : "No usage found"
-    note: !ClaudeService.available ? "nothing to read"
+    reading: ClaudeService.available ? `${face.figure} ` + Tr.t("of this block") : Tr.t("No usage found")
+    note: !ClaudeService.available ? Tr.t("nothing to read")
         : `${ClaudeService.resetsIn}${ClaudeService.weeklyMeasured
             ? " · " + ClaudeService.percent(ClaudeService.weeklyFraction) + " of the week" : ""}`
 

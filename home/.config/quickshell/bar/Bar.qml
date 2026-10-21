@@ -284,8 +284,8 @@ PanelWindow {
 
         Region {
             x: root.shapeLeft
-            width: root.inert ? 0 : root.shapeRight - root.shapeLeft
-            height: root.islandTopMargin + island.height + 12
+            width: (root.inert || root.away) ? 0 : root.shapeRight - root.shapeLeft
+            height: (root.inert || root.away) ? 0 : root.islandTopMargin + island.height + 12
         }
     }
 

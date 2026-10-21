@@ -51,3 +51,13 @@ hl.env("IMPASTO_CAPTURES",   captures)
 hl.env("HYPRSHOT_DIR",       captures)
 hl.env("IMPASTO_RECORDINGS", recordings)
 hl.env("IMPASTO_CAMERA",     camera)
+
+-- · NVIDIA Wayland environment: only set when NVIDIA hardware is active.
+local nvidia_check = io.open("/dev/nvidia0", "r")
+if nvidia_check then
+    nvidia_check:close()
+    hl.env("LIBVA_DRIVER_NAME", "nvidia")
+    hl.env("GBM_BACKEND", "nvidia-drm")
+    hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+    hl.env("NVD_BACKEND", "direct")
+end

@@ -20,7 +20,7 @@ Spread {
 
     readonly property string name: PetService.name !== "" ? PetService.name : "Pet"
 
-    line: PetService.hatched ? `${face.name} · Lv ${PetService.level}` : "An egg"
+    line: PetService.hatched ? `${face.name} · Lv ${PetService.level}` : Tr.t("An egg")
     hue: face.ink.green
     reading: face.name
     note: PetService.moodLine

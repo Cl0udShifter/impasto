@@ -366,6 +366,11 @@ QtObject {
             && client.mapped && !client.hidden && (!client.floating || !!client.fullscreen))
     }
 
+    function isFullscreenActive(): bool {
+        return root.clients.some(client => client.mapped && !client.hidden
+            && (client.fullscreen === true || (client.fullscreen ?? 0) >= 2))
+    }
+
     function focusWindow(address: string): void {
         Hyprland.dispatch(`hl.dsp.focus({ window = "address:${address}" })`)
     }
@@ -503,6 +508,7 @@ QtObject {
             case "changefloatingmode":
             case "fullscreen":
                 root.refreshSoon.restart()
+                root.clientsSoon.restart()
                 break
             // `ADDRESS,TITLE`. A spinner in a terminal's title sends one a
             // second, so the title is written into the list already held

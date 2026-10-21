@@ -62,7 +62,7 @@ Item {
         const next = TasksService.next
         if (next)
             return `${next.text} · ${TasksService.dueLabel(next.due)}`
-        return "nothing due"
+        return Tr.t("nothing due")
     }
 
     component Day: Cut {

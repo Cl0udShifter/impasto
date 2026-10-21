@@ -23,9 +23,9 @@ Instrument {
 
     line: BluetoothService.summary
     reading: BluetoothService.summary
-    note: !BluetoothService.available ? "no adapter"
+    note: !BluetoothService.available ? Tr.t("no adapter")
         : BluetoothService.enabled
-        ? (face.connected > 0 ? `${face.connected} connected` : "nothing connected") : "off"
+        ? (face.connected > 0 ? `${face.connected} ` + Tr.t("connected") : Tr.t("nothing connected")) : Tr.t("off")
 
     Item {
         id: plate

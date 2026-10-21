@@ -18,8 +18,25 @@ Singleton {
     id: root
 
     property string layout: "US"
-    readonly property string icon: "⌨"
+    readonly property string icon: "󰌌"
     readonly property string summary: root.layout === "BR" ? "Português (Brasil)" : "English (US)"
+
+    property bool armed: false
+
+    readonly property Timer armTimer: Timer {
+        interval: 1200
+        running: true
+        onTriggered: root.armed = true
+    }
+
+    onLayoutChanged: {
+        if (!root.armed)
+            return
+        if (HyprlandService.isFullscreenActive())
+            return
+        const label = root.layout === "BR" ? "Layout ABNT2 (BR)" : "Layout US"
+        OsdService.requested(root.icon, label, -1)
+    }
 
     readonly property Process queryProcess: Process {
         command: ["hyprctl", "devices", "-j"]
