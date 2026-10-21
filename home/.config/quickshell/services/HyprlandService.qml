@@ -44,6 +44,9 @@ QtObject {
         return main !== "" ? [main].concat(rest) : rest
     }
 
+    onPerScreenChanged: if (root.perScreen) root.alignSoon.restart()
+    onScreenOrderChanged: if (root.perScreen) root.alignSoon.restart()
+
     // The workspace before a screen's first; 0 when they are shared.
     function baseOn(monitor: string): int {
         return root.perScreen ? Math.max(0, root.screenOrder.indexOf(monitor)) * 10 : 0
@@ -147,6 +150,44 @@ QtObject {
         root.activeProcess.running = true
     }
 
+    readonly property Timer alignSoon: Timer {
+        interval: 100
+        onTriggered: root.alignWorkspaces()
+    }
+
+    function alignWorkspaces(): void {
+        if (!root.perScreen || root.screenOrder.length <= 1)
+            return
+
+        const dispatches = []
+        for (let i = 0; i < root.screenOrder.length; i++) {
+            const monName = root.screenOrder[i]
+            if (!monName)
+                continue
+            const base = root.baseOn(monName)
+            const target = base + 1
+            const current = root.activeOn(monName)
+            if (current < base + 1 || current > base + 10) {
+                dispatches.push(`hl.dispatch(hl.dsp.focus({ monitor = "${monName}" }))`)
+                dispatches.push(`hl.dispatch(hl.dsp.focus({ workspace = ${target} }))`)
+                root.noteActive(monName, target)
+            }
+        }
+
+        if (dispatches.length === 0)
+            return
+
+        const chunk = `function() `
+            + `local cur = hl.get_active_monitor() `
+            + `local cur_name = cur and cur.name `
+            + dispatches.join(" ") + " "
+            + `if cur_name then hl.dispatch(hl.dsp.focus({ monitor = cur_name })) end `
+            + `end`
+
+        Hyprland.dispatch(chunk)
+        root.refresh()
+    }
+
     // ── WORKSPACES FILE ─────────────────────────────────────────────────────
     //
     // The number keys are Hyprland's, so the mode and the order are written
@@ -218,6 +259,8 @@ QtObject {
                 root.monitors = list
                 for (const monitor of list)
                     root.noteActive(monitor.name ?? "", monitor.activeWorkspace?.id ?? 0)
+                if (root.perScreen)
+                    root.alignSoon.restart()
             }
         }
     }
