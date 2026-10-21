@@ -76,6 +76,8 @@ ShellRoot {
         void CameraService.ready
         // Runs startup user applications on boot.
         void AutostartService.bootstrap()
+        // Listens to keyboard layout changes for indicator OSD.
+        void KeyboardService.layout
     }
 
     // ── SCREENS ─────────────────────────────────────────────────────────────

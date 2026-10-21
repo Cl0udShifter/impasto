@@ -54,7 +54,7 @@ Item {
 
         ModuleCard {
             title: KeyboardService.summary
-            subtitle: KeyboardService.layout === "BR" ? "Layout ABNT2" : "Layout US"
+            subtitle: KeyboardService.layout === "BR" ? Tr.t("Layout ABNT2 (BR)") : Tr.t("Layout US")
 
             mark: RingIndicator {
                 anchors.fill: parent
@@ -78,7 +78,7 @@ Item {
 
                 Text {
                     Layout.fillWidth: true
-                    text: "Alternar layout"
+                    text: Tr.t("Toggle layout")
                     font.family: Theme.fontFamily
                     font.pixelSize: Theme.fontSizeSmall
                     color: Theme.textMuted
@@ -91,13 +91,13 @@ Item {
             }
 
             CardFact {
-                name: "Layout ativo"
+                name: Tr.t("Active layout")
                 value: KeyboardService.layout
             }
 
             CardFact {
-                name: "Dispositivos"
-                value: "Todos sincronizados"
+                name: Tr.t("Devices")
+                value: Tr.t("All synchronized")
             }
         }
     }

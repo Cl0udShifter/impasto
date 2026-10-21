@@ -119,7 +119,7 @@ QtObject {
             execPayload = cmd
         }
 
-        Quickshell.execDetached(["hyprctl", "dispatch", "exec", execPayload])
+        Hyprland.dispatch(`hl.dsp.exec_cmd(${JSON.stringify(execPayload)})`)
     }
 
     function launchAll(): void {

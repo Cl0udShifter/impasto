@@ -1246,7 +1246,11 @@ QtObject {
             "adapter on": "adaptador encendido",
             "adapter off": "adaptador apagado",
             "Nothing to read until Codex runs": "Nada que leer hasta que Codex se ejecute",
-            "of this block": "de este bloque"
+            "of this block": "de este bloque",
+            "Toggle layout": "Alternar distribución",
+            "Active layout": "Distribución activa",
+            "Devices": "Dispositivos",
+            "All synchronized": "Todos sincronizados"
         },
         pt: {
             // ── SHARED ──────────────────────────────────────────────────────
@@ -2612,7 +2616,11 @@ QtObject {
             "adapter on": "adaptador ligado",
             "adapter off": "adaptador desligado",
             "Nothing to read until Codex runs": "Nada a ler até o Codex executar",
-            "of this block": "deste bloco"
+            "of this block": "deste bloco",
+            "Toggle layout": "Alternar layout",
+            "Active layout": "Layout ativo",
+            "Devices": "Dispositivos",
+            "All synchronized": "Todos sincronizados"
         }
     })
 }
