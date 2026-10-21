@@ -573,7 +573,7 @@ Item {
                         Layout.fillWidth: true
                         text: {
                             const name = agenda.day === TasksService.todayKey ? "Today"
-                                : Qt.formatDate(TasksService.dateOf(agenda.day), "dddd d")
+                                : Qt.locale(SettingsService.language).toString(TasksService.dateOf(agenda.day), "dddd d")
                             const n = agenda.due.length
                             const left = agenda.due.filter(task => task.state !== "done").length
                             return n === 0 ? `${name} · nothing due` : `${name} · ${left} of ${n} to do`

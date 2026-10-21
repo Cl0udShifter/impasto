@@ -121,8 +121,8 @@ Item {
                 y: plate.y + plate.height - height * 0.35
                 seed: root.seed + "date"
                 hue: root.ink.red
-                reading: Qt.formatDateTime(clock.date, "dddd")
-                note: Qt.formatDateTime(clock.date, "d MMMM yyyy")
+                reading: Qt.locale(SettingsService.language).toString(clock.date, "dddd")
+                note: Qt.locale(SettingsService.language).toString(clock.date, "d MMMM yyyy")
                 size: 1.5
                 room: root.width * 0.8
             }
@@ -188,9 +188,9 @@ Item {
                 y: parent.band ? (parent.height - height) / 2 : parent.height - height - root.height * 0.02
                 seed: root.seed + "date"
                 hue: root.ink.paper
-                reading: parent.band ? Qt.formatDateTime(clock.date, "dddd")
+                reading: parent.band ? Qt.locale(SettingsService.language).toString(clock.date, "dddd")
                     : time.parent.stamp.split(" ")[1] ?? ""
-                note: parent.band ? Qt.formatDateTime(clock.date, "d MMMM yyyy") : ""
+                note: parent.band ? Qt.locale(SettingsService.language).toString(clock.date, "d MMMM yyyy") : ""
                 size: parent.band ? 1.6 : 0.9
                 room: parent.band ? parent.width - x - root.height * 0.1 : root.height
             }
