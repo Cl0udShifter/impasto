@@ -151,6 +151,17 @@ SettingsSection {
             title: Tr.t("Interface")
             note: Tr.t("Everything Quickshell draws.")
 
+            SettingSlider {
+                label: Tr.t("Interface scale")
+                reading: Tr.t("Adjusts text and controls size across the shell.")
+                value: Math.round((SettingsService.uiScale || 1.0) * 100)
+                from: 85
+                to: 135
+                stepSize: 5
+                unit: "%"
+                onMoved: value => SettingsService.set("uiScale", Math.round(value) / 100)
+            }
+
             SettingBlock {
                 padding: 6
 

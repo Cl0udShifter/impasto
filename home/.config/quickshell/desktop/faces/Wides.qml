@@ -747,9 +747,9 @@ Item {
                 ? SettingsService.clockFormat.replace("mm", "mm:ss")
                 : SettingsService.clockFormat
 
-            label: Qt.formatDateTime(clock.date, "dddd")
+            label: Qt.locale(SettingsService.language).toString(clock.date, "dddd")
             reading: Qt.formatDateTime(clock.date, clockFace.format)
-            note: Qt.formatDateTime(clock.date, "d MMMM yyyy")
+            note: Qt.locale(SettingsService.language).toString(clock.date, "d MMMM yyyy")
 
             SystemClock {
                 id: clock
@@ -800,18 +800,18 @@ Item {
 
                 // The same label and reading as the square, so the wide face
                 // adds the week without rearranging anything.
-                label: Qt.formatDateTime(calendarClock.date, "MMMM")
+                label: Qt.locale(SettingsService.language).toString(calendarClock.date, "MMMM")
                 reading: `${calendarFace.today.getDate()}`
                 // Today's count if any; else the next task due; else the
                 // weekday.
                 note: {
                     const left = TasksService.pendingOn(TasksService.todayKey)
                     if (left > 0)
-                        return `${left} to do today`
+                        return Tr.t("%1 to do today").arg(left)
                     const next = TasksService.next
                     if (next)
                         return `${next.text} · ${TasksService.dueLabel(next.due)}`
-                    return Qt.formatDateTime(calendarClock.date, "dddd")
+                    return Qt.locale(SettingsService.language).toString(calendarClock.date, "dddd")
                 }
                 extraShare: 0.5
 
@@ -865,7 +865,7 @@ Item {
 
                                     Text {
                                         anchors.horizontalCenter: parent.horizontalCenter
-                                        text: Qt.formatDateTime(day.date, "ddd").charAt(0)
+                                        text: Qt.locale(SettingsService.language).toString(day.date, "ddd").charAt(0).toUpperCase()
                                         font.family: Theme.fontFamily
                                         font.pixelSize: Theme.fontSizeLabel
                                         color: root.ink.muted

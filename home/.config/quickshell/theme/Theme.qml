@@ -528,16 +528,18 @@ QtObject {
     readonly property string fontHand: SettingsService.notesHandwriting
         ? root.fontSignature : root.fontFamily
 
-    readonly property int fontSizeLabel: 10
-    readonly property int fontSizeSmall: 11
-    readonly property int fontSizeRegular: 13
-    readonly property int fontSizeMedium: 14
-    readonly property int fontSizeLarge: 16
+    readonly property real scale: SettingsService.uiScale || 1.0
+
+    readonly property int fontSizeLabel: Math.round(10 * root.scale)
+    readonly property int fontSizeSmall: Math.round(11 * root.scale)
+    readonly property int fontSizeRegular: Math.round(13 * root.scale)
+    readonly property int fontSizeMedium: Math.round(14 * root.scale)
+    readonly property int fontSizeLarge: Math.round(16 * root.scale)
 
     // Desktop widgets are read from further away. `fontSizeDisplay` is for
     // faces that are a single number (the large clocks).
-    readonly property int fontSizeWidget: 30
-    readonly property int fontSizeDisplay: 68
+    readonly property int fontSizeWidget: Math.round(30 * root.scale)
+    readonly property int fontSizeDisplay: Math.round(68 * root.scale)
 
     // ── MOTION ──────────────────────────────────────────────────────────────
 

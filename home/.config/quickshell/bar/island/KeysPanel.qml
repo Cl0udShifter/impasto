@@ -177,7 +177,7 @@ ColumnLayout {
                             anchors.leftMargin: 10
                             anchors.bottom: parent.bottom
                             anchors.bottomMargin: 6
-                            text: entry.modelData.heading ? entry.modelData.name.toUpperCase() : ""
+                            text: entry.modelData.heading ? Tr.t(entry.modelData.name).toUpperCase() : ""
                             font.family: Theme.fontFamily
                             font.pixelSize: Theme.fontSizeLabel
                             font.weight: Font.DemiBold
@@ -203,7 +203,7 @@ ColumnLayout {
 
                                 Text {
                                     Layout.fillWidth: true
-                                    text: entry.modelData.action ?? ""
+                                    text: Tr.t(entry.modelData.action ?? "")
                                     elide: Text.ElideRight
                                     font.family: Theme.fontFamily
                                     font.pixelSize: Theme.fontSizeRegular

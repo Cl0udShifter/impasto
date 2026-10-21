@@ -20,11 +20,6 @@ hl.env("XCURSOR_THEME",    "Bibata-Modern-Classic")
 -- · Quickshell draws from its own Theme.qml and is unaffected.
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
--- · Qt Wayland rendering: threaded render loop and frame callbacks so each
--- · monitor renders at its native refresh rate (144Hz) without 60Hz bottleneck.
-hl.env("QSG_RENDER_LOOP",                  "threaded")
-hl.env("QT_WAYLAND_FRAME_CALLBACK_TIMING", "1")
-
 -- · user folders from user-dirs.dirs, since their names are localised. Parsed
 -- · directly because `xdg-user-dir` returns $HOME for an unset key.
 local home   = os.getenv("HOME")

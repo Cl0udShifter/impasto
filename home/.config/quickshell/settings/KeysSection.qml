@@ -248,7 +248,7 @@ SettingsSection {
                         required property var modelData
 
                         description: modelData.description
-                        label: modelData.action
+                        label: Tr.t(modelData.action)
                     }
                 }
             }

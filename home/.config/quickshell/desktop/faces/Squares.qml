@@ -420,9 +420,9 @@ Item {
                 ? SettingsService.clockFormat.replace("mm", "mm:ss")
                 : SettingsService.clockFormat
 
-            label: Qt.formatDateTime(clock.date, "ddd")
+            label: Qt.locale(SettingsService.language).toString(clock.date, "ddd")
             reading: Qt.formatDateTime(clock.date, clockFace.format)
-            note: Qt.formatDateTime(clock.date, "d MMMM")
+            note: Qt.locale(SettingsService.language).toString(clock.date, "d MMMM")
 
             SystemClock {
                 id: clock
@@ -471,12 +471,12 @@ Item {
 
                 readonly property date today: calendarClock.date
 
-                label: Qt.formatDateTime(calendarClock.date, "MMMM")
+                label: Qt.locale(SettingsService.language).toString(calendarClock.date, "MMMM")
                 reading: `${calendarFace.today.getDate()}`
                 // The weekday, and how much of today is left when there are
                 // tasks.
                 note: {
-                    const weekday = Qt.formatDateTime(calendarClock.date, "dddd")
+                    const weekday = Qt.locale(SettingsService.language).toString(calendarClock.date, "dddd")
                     const left = TasksService.pendingOn(TasksService.todayKey)
                     return left > 0 ? `${weekday} · ${left} to do` : weekday
                 }

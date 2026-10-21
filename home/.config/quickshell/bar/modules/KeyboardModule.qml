@@ -17,13 +17,36 @@ import "../../components"
 Item {
     id: root
 
+    property bool compact: false
+
     implicitWidth: holder.implicitWidth
     implicitHeight: holder.implicitHeight
 
     Loader {
         id: holder
         anchors.fill: parent
-        sourceComponent: detail
+        sourceComponent: root.compact ? chip : detail
+    }
+
+    Component {
+        id: chip
+
+        RowLayout {
+            spacing: 5
+            Text {
+                text: KeyboardService.icon
+                font.family: Theme.fontMono
+                font.pixelSize: Math.round(Theme.capsuleHeight * 0.44)
+                color: Theme.text
+            }
+            Text {
+                text: KeyboardService.layout
+                font.family: Theme.fontFamily
+                font.pixelSize: Theme.fontSizeSmall
+                font.bold: true
+                color: Theme.accent
+            }
+        }
     }
 
     Component {

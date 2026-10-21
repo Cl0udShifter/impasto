@@ -119,6 +119,17 @@ SettingsSection {
                     onToggled: checked => SettingsService.set("barAutohide", checked)
                 }
             }
+
+            SettingSlider {
+                visible: SettingsService.barAutohide
+                label: Tr.t("Edge reveal height")
+                value: SettingsService.barAutohideTriggerHeight
+                from: 1
+                to: 8
+                stepSize: 1
+                unit: "px"
+                onMoved: value => SettingsService.set("barAutohideTriggerHeight", Math.round(value))
+            }
         }
 
         SettingGroup {

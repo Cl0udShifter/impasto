@@ -87,7 +87,7 @@ Item {
         anchors.left: markBox.right
         anchors.leftMargin: 8
 
-        text: root.label
+        text: Tr.t(root.label)
         horizontalAlignment: Text.AlignRight
         elide: Text.ElideRight
         font.family: Theme.fontFamily
@@ -140,7 +140,7 @@ Item {
         Text {
             width: parent.width
             visible: root.note !== ""
-            text: root.note
+            text: Tr.t(root.note)
             elide: Text.ElideRight
             font.family: Theme.fontFamily
             font.pixelSize: Theme.fontSizeSmall

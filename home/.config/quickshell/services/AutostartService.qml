@@ -112,14 +112,14 @@ QtObject {
             return
         }
 
-        let dispatchStr = ""
+        let execPayload = ""
         if (targetWs > 0) {
-            dispatchStr = `hl.dsp.exec("[workspace ${targetWs} silent] ${cmd}")`
+            execPayload = `[workspace ${targetWs} silent] ${cmd}`
         } else {
-            dispatchStr = `hl.dsp.exec("${cmd}")`
+            execPayload = cmd
         }
 
-        Hyprland.dispatch(dispatchStr)
+        Quickshell.execDetached(["hyprctl", "dispatch", "exec", execPayload])
     }
 
     function launchAll(): void {
@@ -152,6 +152,11 @@ QtObject {
     readonly property Timer bootTimer: Timer {
         interval: 1200
         onTriggered: root.launchAll()
+    }
+
+    Component.onCompleted: {
+        if (SettingsService.arrived)
+            root.bootProcess.running = true
     }
 
     function bootstrap(): void {

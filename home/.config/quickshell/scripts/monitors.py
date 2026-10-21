@@ -119,6 +119,8 @@ def rule_chunk(rule):
         return None
     if any(field not in FIELDS for field in rule):
         return None
+    if "mode" not in rule and not rule.get("disabled"):
+        rule["mode"] = "preferred"
     pairs = []
     for field in ORDER:
         if field not in rule:

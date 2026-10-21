@@ -162,6 +162,12 @@ Singleton {
         if (rule.scale === undefined) {
             rule.scale = found?.scale ?? 1
         }
+        if (rule.mode === undefined && found?.mode) {
+            rule.mode = found.mode
+        }
+        if (rule.transform === undefined && found?.transform !== undefined) {
+            rule.transform = found.transform
+        }
         return rule
     }
 
@@ -280,14 +286,17 @@ Singleton {
             return false
         if (root.monitors.some(monitor => !monitor.disabled))
             return false
-        const rules = root.monitors.map(monitor => ({
-            output: `desc:${monitor.description}`,
-            disabled: false,
-            mode: "preferred",
-            position: "auto",
-            scale: 1
-        }))
-        console.warn("No screen is lit — putting them all back on.")
+        const rules = root.monitors.map(monitor => {
+            const saved = root.ruleFor(monitor.description)
+            return {
+                output: `desc:${monitor.description}`,
+                disabled: false,
+                mode: (saved && saved.mode) ? saved.mode : (monitor.mode || "preferred"),
+                position: (saved && saved.position) ? saved.position : "auto",
+                scale: (saved && saved.scale) ? saved.scale : (monitor.scale || 1)
+            }
+        })
+        console.warn("No screen is lit, restoring screens with saved rules.")
         root.settling.restart()
         root.applier.command = [root.script, "apply", JSON.stringify(rules)]
         root.applier.running = true
@@ -450,21 +459,15 @@ Singleton {
 
     // Reconciles and reapplies monitor profiles after waking from suspend.
     function wakeUp(): void {
-        root.disturbed = true
         root.wakeTimer.restart()
     }
 
     readonly property Timer wakeTimer: Timer {
-        interval: 1000
+        interval: 2500
         onTriggered: {
+            root.disturbed = true
             root.load()
-            root.wakeFollowup.restart()
         }
-    }
-
-    readonly property Timer wakeFollowup: Timer {
-        interval: 1500
-        onTriggered: root.load()
     }
 
     // One read per burst of events.

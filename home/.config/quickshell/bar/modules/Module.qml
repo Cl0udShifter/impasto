@@ -82,5 +82,5 @@ Item {
     Component { id: notesModule;      NotesModule {} }
     Component { id: tasksModule;      TasksModule {} }
     Component { id: notificationsModule; NotificationsModule {} }
-    Component { id: keyboardModule; KeyboardModule {} }
+    Component { id: keyboardModule; KeyboardModule { compact: root.compact } }
 }

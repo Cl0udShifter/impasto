@@ -35,6 +35,7 @@ Singleton {
     readonly property alias barEverywhere: config.barEverywhere
     readonly property alias barHidden: config.barHidden
     readonly property alias barAutohide: config.barAutohide
+    readonly property alias barAutohideTriggerHeight: config.barAutohideTriggerHeight
     readonly property alias screenCorners: config.screenCorners
     readonly property alias gameMode: config.gameMode
     readonly property alias barLeft: config.barLeft
@@ -57,6 +58,7 @@ Singleton {
     readonly property alias dockEnabled: config.dockEnabled
     readonly property alias dockPinned: config.dockPinned
     readonly property alias autostart: config.autostart
+    readonly property alias uiScale: config.uiScale
     readonly property alias dockEdge: config.dockEdge
     readonly property alias dockAlignment: config.dockAlignment
     readonly property alias dockIconSize: config.dockIconSize
@@ -344,8 +346,8 @@ Singleton {
         "displays", "lidPolicy", "workspaceMode", "autostart",
         "userName", "userAvatar", "language", "keyboard", "weatherPlace", "githubUser", "markets",
         "emojiTone",
-        "doNotDisturb", "nightLight", "nightTemperature", "barHidden", "barAutohide", "desktopHidden",
-        "gameMode",
+        "doNotDisturb", "nightLight", "nightTemperature", "barHidden", "barAutohide", "barAutohideTriggerHeight", "desktopHidden",
+        "gameMode", "uiScale",
         "cameraEnabled", "cameraEffect", "cameraReactions",
         "recorderAudio", "captureShape", "captureKind"
     ]
@@ -534,6 +536,7 @@ Singleton {
         // Intelligent auto-hide: slides off screen when tiled or fullscreen
         // windows are present, and reappears on top hover.
         property bool barAutohide: false
+        property int barAutohideTriggerHeight: 2
 
         // Every screen's four corners rounded off in black.
         property bool screenCorners: false
@@ -541,6 +544,9 @@ Singleton {
         // Game mode: no animations, blur, shadow or glass on the compositor,
         // over whatever the rest of the settings say.
         property bool gameMode: false
+
+        // Interface scaling factor (0.85 - 1.35).
+        property real uiScale: 1.0
 
         // Four shadows, one per layer: Hyprland's under the windows, the
         // shell's under the bar, the dock and the desk's widgets.

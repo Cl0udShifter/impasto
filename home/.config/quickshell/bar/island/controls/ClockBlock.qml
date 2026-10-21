@@ -37,6 +37,7 @@ Card {
         : SettingsService.clockFormat
 
     readonly property int timeSize: root.tall ? 64 : (root.wide ? 44 : 30)
+    readonly property var locale: Qt.locale(SettingsService.language)
 
     Column {
         anchors.centerIn: parent
@@ -59,7 +60,7 @@ Card {
 
         Text {
             width: parent.width
-            text: Qt.formatDateTime(clock.date, root.wide || root.tall ? "dddd d MMMM" : "ddd d MMM")
+            text: root.locale.toString(clock.date, root.wide || root.tall ? "dddd d MMMM" : "ddd d MMM")
             horizontalAlignment: Text.AlignHCenter
             elide: Text.ElideRight
             font.family: Theme.fontFamily

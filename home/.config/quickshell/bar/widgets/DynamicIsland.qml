@@ -242,6 +242,23 @@ Rectangle {
     }
 
     property bool summaryHeld: false
+    property bool revealCooldown: false
+
+    Timer {
+        id: revealCooldownTimer
+        interval: 500
+        onTriggered: {
+            root.revealCooldown = false
+            if (hover.hovered && root.canSummarise && !root.restBusy)
+                dwell.restart()
+        }
+    }
+
+    function startRevealCooldown(): void {
+        root.revealCooldown = true
+        dwell.stop()
+        revealCooldownTimer.restart()
+    }
 
     readonly property bool restBusy: islandState.layer === islandState.layerModules
         && (collapsedLoader.item?.busy ?? false)
@@ -250,6 +267,7 @@ Rectangle {
         && root.active
         && !root.summaryHeld
         && !root.landing
+        && !root.revealCooldown
         && ModuleService.openId === ""
         && (islandState.layer === islandState.layerModules
             || islandState.layer === islandState.layerSummary)

@@ -623,6 +623,8 @@ Singleton {
             return NotesService.ready
         case "tasks":
             return TasksService.ready
+        case "keyboard":
+            return true
         case "photo":
             // An empty one asks for a picture.
             return true

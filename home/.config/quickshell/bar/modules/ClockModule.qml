@@ -34,6 +34,8 @@ Item {
         ? SettingsService.clockFormat.replace("mm", "mm:ss")
         : SettingsService.clockFormat
 
+    readonly property var locale: Qt.locale(SettingsService.language)
+
     Loader {
         id: holder
         anchors.fill: parent
@@ -60,7 +62,7 @@ Item {
                 Text {
                     anchors.verticalCenter: parent.verticalCenter
                     visible: SettingsService.clockShowsDate
-                    text: Qt.formatDateTime(clock.date, "ddd d MMM")
+                    text: root.locale.toString(clock.date, "ddd d MMM")
                     font.family: Theme.fontFamily
                     font.pixelSize: Theme.fontSizeSmall
                     color: Theme.textMuted

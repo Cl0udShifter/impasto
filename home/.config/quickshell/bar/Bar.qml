@@ -236,6 +236,7 @@ PanelWindow {
     readonly property bool autohideActive: root.autohideOption && root.hasTiledWindow
 
     property bool revealed: false
+    onRevealedChanged: if (root.revealed) island.startRevealCooldown()
 
     readonly property Timer hideDelay: Timer {
         interval: 400
@@ -278,7 +279,7 @@ PanelWindow {
         height: root.inert ? 0
             : root.wholeScreen ? root.height
             : root.zen ? 0
-            : root.away ? 3
+            : root.away ? SettingsService.barAutohideTriggerHeight
             : root.collapsedHeight
 
         Region {

@@ -70,6 +70,8 @@ SettingsSection {
         const rates = group ? [...group.refreshes] : []
         if (screen.name === "DP-1" && !rates.some(r => Math.abs(r - 144) < 1))
             rates.unshift(144)
+        if (screen.name === "DP-1" && !rates.some(r => Math.abs(r - 60) < 1))
+            rates.push(60)
         return rates.sort((a, b) => b - a)
     }
 
@@ -396,7 +398,7 @@ SettingsSection {
             SettingRow {
                 label: Tr.t("Refresh rate")
                 reading: `${(root.current?.refresh ?? 0).toFixed(2)} Hz`
-                locked: root.currentOff || (root.currentRefreshes?.length ?? 0) < 2
+                locked: root.currentOff || ((root.currentRefreshes?.length ?? 0) < 2 && root.current?.name !== "DP-1")
                 reason: root.currentOff
                     ? Tr.t("The screen is off") : Tr.t("The only rate at this resolution")
 
