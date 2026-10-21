@@ -38,9 +38,8 @@ hl.config({
 
 hl.config({
     cursor = {
-        -- Hide after 5 s idle rather than on key press, so the pointer does
-        -- not vanish after every shortcut.
-        inactive_timeout = 5,
+        inactive_timeout = 0,
+        no_hardware_cursors = true,
     },
 })
 
